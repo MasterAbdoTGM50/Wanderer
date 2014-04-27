@@ -1,4 +1,4 @@
 Abysswalker
 ===========
 
-Abysswalker's Repository
+A minecraft adventure mod with some sprinkles of magic.

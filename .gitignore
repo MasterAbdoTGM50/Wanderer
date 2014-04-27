@@ -1,0 +1,19 @@
+#################
+## Mod Ignores
+#################
+
+## Gradle
+/.gradle
+/build
+/gradle
+/gradlew
+/gradlew.bat
+
+## Intellij
+/out
+/*.iml
+/*.ipr
+/*.iws
+
+## Misc
+/run

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "Abysswalker",
+  "name": "Abysswalker",
+  "description": "A adventure mod with sprinkles of magic",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["MasterAbdoTGM50"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
