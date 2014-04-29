@@ -12,8 +12,8 @@ import org.lwjgl.opengl.GL11;
 
 public class GuiScroll extends GuiScreen {
 
-    private final int scrollWidth = 253;
-    private final int scrollHeight = 253;
+    private final int scrollWidth = 192;
+    private final int scrollHeight = 248;
     private int startX, startY;
     private static final ResourceLocation texture = new ResourceLocation(LibMod.ID.toLowerCase(), "textures/gui/scroll.png");
 
