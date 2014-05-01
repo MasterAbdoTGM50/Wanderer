@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
 /**
@@ -17,15 +18,16 @@ import net.minecraft.world.World;
 
 public class ItemScroll extends Item {
 
-    private String key;
-    private String text;
+    private String title, text;
 
-    public ItemScroll() {
+    public ItemScroll(String key) {
 
         super();
         setUnlocalizedName(LibItem.SCROLL_NAME);
         setCreativeTab(Abysswalker.tabAbysswalker);
         setMaxStackSize(1);
+        setTitle(key);
+        setText(key);
 
     }
 
@@ -48,5 +50,21 @@ public class ItemScroll extends Item {
         itemIcon = register.registerIcon(LibMod.ID.toLowerCase() + ":" + "scroll");
 
     }
+
+    private void setTitle(String key) {
+
+        title = StatCollector.translateToLocal("scroll." + key + ".title");
+
+    }
+
+    public String getTitle() {return title;}
+
+    private void setText(String key) {
+
+        text = StatCollector.translateToLocal("scroll." + key + ".text");
+
+    }
+
+    public String getText() {return text;}
 
 }

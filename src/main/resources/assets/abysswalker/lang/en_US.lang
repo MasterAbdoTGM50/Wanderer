@@ -5,3 +5,7 @@ itemGroup.Abysswalker=Abysswalker
 item.itemScroll.name=Ancient Scroll
 
 #Blocks
+
+#Scrolls
+scroll.TEST.title=Test Title
+scroll.TEST.text=I love this text so much

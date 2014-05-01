@@ -1,7 +1,6 @@
 package matgm50.abysswalker.network.client.gui;
 
 import matgm50.abysswalker.lib.LibMod;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
@@ -16,9 +15,14 @@ public class GuiScroll extends GuiScreen {
     private final int scrollHeight = 248;
     private int startX, startY;
     private static final ResourceLocation texture = new ResourceLocation(LibMod.ID.toLowerCase(), "textures/gui/scroll.png");
+    private String title, text;
 
-    @Override
-    public boolean doesGuiPauseGame() {return false;}
+    public GuiScroll(String title, String text) {
+
+        this.title = title;
+        this.text = text;
+
+    }
 
     @Override
     public void initGui() {
@@ -29,6 +33,9 @@ public class GuiScroll extends GuiScreen {
         startY = (height - scrollHeight) / 2;
 
     }
+
+    @Override
+    public boolean doesGuiPauseGame() {return false;}
 
     @Override
     public void drawScreen(int par1, int par2, float par3) {

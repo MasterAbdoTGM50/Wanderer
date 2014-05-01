@@ -14,7 +14,7 @@ public class ModItems {
 
     public static void init() {
 
-        itemScroll = new ItemScroll();
+        itemScroll = new ItemScroll("TEST");
 
         GameRegistry.registerItem(itemScroll, LibItem.SCROLL_NAME);
 
