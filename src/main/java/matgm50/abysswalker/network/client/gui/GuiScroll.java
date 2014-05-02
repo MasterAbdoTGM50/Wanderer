@@ -15,11 +15,10 @@ public class GuiScroll extends GuiScreen {
     private final int scrollHeight = 248;
     private int startX, startY;
     private static final ResourceLocation texture = new ResourceLocation(LibMod.ID.toLowerCase(), "textures/gui/scroll.png");
-    private String title, text;
+    private String text;
 
-    public GuiScroll(String title, String text) {
+    public GuiScroll(String text) {
 
-        this.title = title;
         this.text = text;
 
     }
@@ -44,6 +43,7 @@ public class GuiScroll extends GuiScreen {
 
         mc.getTextureManager().bindTexture(texture);
         drawTexturedModalRect(startX, startY, 0, 0, scrollWidth, scrollHeight);
+        fontRendererObj.drawSplitString(text ,startX + 20, startY + 30, 154, 0);
 
         super.drawScreen(par1, par2, par3);
 

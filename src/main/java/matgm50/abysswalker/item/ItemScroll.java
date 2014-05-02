@@ -18,7 +18,7 @@ import net.minecraft.world.World;
 
 public class ItemScroll extends Item {
 
-    private String title, text;
+    private String text;
 
     public ItemScroll(String key) {
 
@@ -26,7 +26,6 @@ public class ItemScroll extends Item {
         setUnlocalizedName(LibItem.SCROLL_NAME);
         setCreativeTab(Abysswalker.tabAbysswalker);
         setMaxStackSize(1);
-        setTitle(key);
         setText(key);
 
     }
@@ -50,14 +49,6 @@ public class ItemScroll extends Item {
         itemIcon = register.registerIcon(LibMod.ID.toLowerCase() + ":" + "scroll");
 
     }
-
-    private void setTitle(String key) {
-
-        title = StatCollector.translateToLocal("scroll." + key + ".title");
-
-    }
-
-    public String getTitle() {return title;}
 
     private void setText(String key) {
 
