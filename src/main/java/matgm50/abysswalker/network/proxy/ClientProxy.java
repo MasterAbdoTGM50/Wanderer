@@ -7,7 +7,7 @@ package matgm50.abysswalker.network.proxy;
 public class ClientProxy extends CommonProxy {
 
     @Override
-    public void InitRenderers() {
+    public void initRenderers() {
 
     }
 

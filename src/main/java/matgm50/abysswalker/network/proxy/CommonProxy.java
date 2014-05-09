@@ -6,7 +6,7 @@ package matgm50.abysswalker.network.proxy;
 
 public class CommonProxy {
 
-    public void InitRenderers() {
+    public void initRenderers() {
 
     }
 

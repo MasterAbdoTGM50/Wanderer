@@ -12,13 +12,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
+import java.util.List;
+
 /**
  * Created by MasterAbdoTGM50 on 4/23/2014.
  */
 
 public class ItemScroll extends Item {
 
-    private String text;
+    private String text, name;
 
     public ItemScroll(String key) {
 
@@ -26,7 +28,15 @@ public class ItemScroll extends Item {
         setUnlocalizedName(LibItem.SCROLL_NAME);
         setCreativeTab(Abysswalker.tabAbysswalker);
         setMaxStackSize(1);
+        setName(key);
         setText(key);
+
+    }
+
+    @Override
+    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
+
+        par3List.add(name);
 
     }
 
@@ -57,5 +67,13 @@ public class ItemScroll extends Item {
     }
 
     public String getText() {return text;}
+
+    private void setName(String key) {
+
+        name = StatCollector.translateToLocal("scroll." + key + ".name");
+
+    }
+
+    public String getName() {return name;}
 
 }
