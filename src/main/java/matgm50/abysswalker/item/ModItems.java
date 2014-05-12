@@ -1,8 +1,8 @@
 package matgm50.abysswalker.item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import matgm50.abysswalker.lib.LibItem;
-import matgm50.abysswalker.lib.LibScroll;
+import matgm50.abysswalker.lib.ItemLib;
+import matgm50.abysswalker.lib.ScrollLib;
 import net.minecraft.item.Item;
 
 /**
@@ -15,9 +15,9 @@ public class ModItems {
 
     public static void init() {
 
-        itemScroll = new ItemScroll(LibScroll.ABYSSWALKER_KEY);
+        itemScroll = new ItemScroll(ScrollLib.ABYSSWALKER_KEY);
 
-        GameRegistry.registerItem(itemScroll, LibItem.SCROLL_NAME);
+        GameRegistry.registerItem(itemScroll, ItemLib.SCROLL_NAME);
 
     }
 

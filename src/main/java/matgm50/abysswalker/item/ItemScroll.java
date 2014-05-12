@@ -3,8 +3,8 @@ package matgm50.abysswalker.item;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import matgm50.abysswalker.Abysswalker;
-import matgm50.abysswalker.lib.LibItem;
-import matgm50.abysswalker.lib.LibMod;
+import matgm50.abysswalker.lib.ItemLib;
+import matgm50.abysswalker.lib.ModLib;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -25,7 +25,7 @@ public class ItemScroll extends Item {
     public ItemScroll(String key) {
 
         super();
-        setUnlocalizedName(LibItem.SCROLL_NAME);
+        setUnlocalizedName(ItemLib.SCROLL_NAME);
         setCreativeTab(Abysswalker.tabAbysswalker);
         setMaxStackSize(1);
         setName(key);
@@ -56,7 +56,7 @@ public class ItemScroll extends Item {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister register) {
 
-        itemIcon = register.registerIcon(LibMod.ID.toLowerCase() + ":" + "scroll");
+        itemIcon = register.registerIcon(ModLib.ID.toLowerCase() + ":" + "scroll");
 
     }
 

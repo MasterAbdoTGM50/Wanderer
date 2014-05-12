@@ -4,7 +4,7 @@ package matgm50.abysswalker.lib;
  * Created by MasterAbdoTGM50 on 4/23/2014.
  */
 
-public class LibMod {
+public class ModLib {
 
     public static final String ID = "Abysswalker";
     public static final String NAME = "Abysswalker";

@@ -1,6 +1,6 @@
 package matgm50.abysswalker.network.client.gui;
 
-import matgm50.abysswalker.lib.LibMod;
+import matgm50.abysswalker.lib.ModLib;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
@@ -14,7 +14,7 @@ public class GuiScroll extends GuiScreen {
     private final int scrollWidth = 192;
     private final int scrollHeight = 248;
     private int startX, startY;
-    private static final ResourceLocation texture = new ResourceLocation(LibMod.ID.toLowerCase(), "textures/gui/scroll.png");
+    private static final ResourceLocation texture = new ResourceLocation(ModLib.ID.toLowerCase(), "textures/gui/scroll.png");
     private String text;
 
     public GuiScroll(String text) {
@@ -43,7 +43,7 @@ public class GuiScroll extends GuiScreen {
 
         mc.getTextureManager().bindTexture(texture);
         drawTexturedModalRect(startX, startY, 0, 0, scrollWidth, scrollHeight);
-        fontRendererObj.drawSplitString(text ,startX + 20, startY + 30, 154, 0);
+        fontRendererObj.drawSplitString(text, startX + 20, startY + 30, 154, 0);
 
         super.drawScreen(par1, par2, par3);
 
