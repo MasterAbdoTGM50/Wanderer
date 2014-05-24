@@ -1,4 +1,4 @@
-package matgm50.abysswalker.network.proxy;
+package matgm50.abysswalker.proxy;
 
 /**
  * Created by MasterAbdoTGM50 on 4/23/2014.

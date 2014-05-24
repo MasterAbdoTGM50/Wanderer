@@ -3,6 +3,7 @@ package matgm50.abysswalker.item;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import matgm50.abysswalker.Abysswalker;
+import matgm50.abysswalker.client.gui.scroll.ScrollEntry;
 import matgm50.abysswalker.lib.ItemLib;
 import matgm50.abysswalker.lib.ModLib;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -20,16 +21,17 @@ import java.util.List;
 
 public class ItemScroll extends Item {
 
-    private String text, name;
+    private String key, name;
+    private ScrollEntry entry;
 
-    public ItemScroll(String key) {
+    public ItemScroll(ScrollEntry entry) {
 
         super();
         setUnlocalizedName(ItemLib.SCROLL_NAME);
         setCreativeTab(Abysswalker.tabAbysswalker);
         setMaxStackSize(1);
-        setName(key);
-        setText(key);
+        setEntry(entry);
+        setName(entry.getKey());
 
     }
 
@@ -60,13 +62,13 @@ public class ItemScroll extends Item {
 
     }
 
-    private void setText(String key) {
+    private void setEntry(ScrollEntry entry) {
 
-        text = StatCollector.translateToLocal("scroll." + key + ".text");
+        this.entry = entry;
 
     }
 
-    public String getText() {return text;}
+    public ScrollEntry getEntry() {return this.entry;}
 
     private void setName(String key) {
 

@@ -9,8 +9,8 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import matgm50.abysswalker.item.ModItems;
 import matgm50.abysswalker.lib.ModLib;
-import matgm50.abysswalker.network.client.gui.GuiHandler;
-import matgm50.abysswalker.network.proxy.CommonProxy;
+import matgm50.abysswalker.client.gui.GuiHandler;
+import matgm50.abysswalker.proxy.CommonProxy;
 import matgm50.abysswalker.util.TabAbysswalker;
 import net.minecraft.creativetab.CreativeTabs;
 
@@ -28,14 +28,12 @@ public class Abysswalker {
     @SidedProxy(serverSide = ModLib.COMMONPROXY, clientSide = ModLib.CLIENTPROXY)
     public static CommonProxy proxy;
 
-    public static GuiHandler guiHandler = new GuiHandler();
-
     public static CreativeTabs tabAbysswalker = new TabAbysswalker(ModLib.ID);
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
-        guiHandler.init();
+        GuiHandler.init();
 
         ModItems.init();
 

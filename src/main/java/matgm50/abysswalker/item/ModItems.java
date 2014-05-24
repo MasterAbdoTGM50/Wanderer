@@ -1,6 +1,8 @@
 package matgm50.abysswalker.item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import matgm50.abysswalker.client.gui.scroll.ScrollEntry;
+import matgm50.abysswalker.client.gui.scroll.page.ScrollPageText;
 import matgm50.abysswalker.lib.ItemLib;
 import matgm50.abysswalker.lib.ScrollLib;
 import net.minecraft.item.Item;
@@ -12,10 +14,14 @@ import net.minecraft.item.Item;
 public class ModItems {
 
     public static Item itemScroll;
+    public static ScrollEntry TESTENTRY;
 
     public static void init() {
 
-        itemScroll = new ItemScroll(ScrollLib.ABYSSWALKER_KEY);
+        TESTENTRY = new ScrollEntry(ScrollLib.ABYSSWALKER_KEY);
+        TESTENTRY.addPages(new ScrollPageText(), new ScrollPageText());
+
+        itemScroll = new ItemScroll(TESTENTRY);
 
         GameRegistry.registerItem(itemScroll, ItemLib.SCROLL_NAME);
 
