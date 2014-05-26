@@ -87,4 +87,10 @@ public class ScrollPageText extends ScrollPage {
 
     }
 
+    public String getText() {
+
+        return this.text;
+
+    }
+
 }

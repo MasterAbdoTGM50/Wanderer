@@ -2,6 +2,8 @@ package matgm50.abysswalker.util;
 
 import matgm50.abysswalker.item.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
 /**
@@ -19,7 +21,7 @@ public class TabAbysswalker extends CreativeTabs {
     @Override
     public Item getTabIconItem() {
 
-        return ModItems.itemScroll;
+        return Items.ender_eye;
 
     }
 }

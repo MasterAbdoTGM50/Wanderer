@@ -8,6 +8,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import matgm50.abysswalker.item.ModItems;
+import matgm50.abysswalker.item.ModScrolls;
 import matgm50.abysswalker.lib.ModLib;
 import matgm50.abysswalker.client.gui.GuiHandler;
 import matgm50.abysswalker.proxy.CommonProxy;
@@ -35,6 +36,7 @@ public class Abysswalker {
 
         GuiHandler.init();
 
+        ModScrolls.init();
         ModItems.init();
 
     }

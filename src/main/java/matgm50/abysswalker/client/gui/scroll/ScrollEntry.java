@@ -13,7 +13,7 @@ import java.util.Arrays;
 
 public class ScrollEntry {
 
-    private String key, title;
+    private String key;
     private int textPageCount = 0;
     private ArrayList<ScrollPage> pages = new ArrayList<ScrollPage>();
 
@@ -23,7 +23,19 @@ public class ScrollEntry {
 
     }
 
-    public void addPages(ScrollPage... pages) {
+    public void setKey(String key) {
+
+        this.key = key;
+
+    }
+
+    public String getKey() {
+
+        return this.key;
+
+    }
+
+    public void setPages(ScrollPage... pages) {
 
         for(int i = 0; i < pages.length; i++) {
 
@@ -37,18 +49,6 @@ public class ScrollEntry {
             this.pages.add(pages[i]);
 
         }
-
-    }
-
-    public void setKey(String key) {
-
-        this.key = key;
-
-    }
-
-    public String getKey() {
-
-        return this.key;
 
     }
 

@@ -13,17 +13,9 @@ import net.minecraft.item.Item;
 
 public class ModItems {
 
-    public static Item itemScroll;
-    public static ScrollEntry TESTENTRY;
-
     public static void init() {
 
-        TESTENTRY = new ScrollEntry(ScrollLib.ABYSSWALKER_KEY);
-        TESTENTRY.addPages(new ScrollPageText(), new ScrollPageText());
 
-        itemScroll = new ItemScroll(TESTENTRY);
-
-        GameRegistry.registerItem(itemScroll, ItemLib.SCROLL_NAME);
 
     }
 

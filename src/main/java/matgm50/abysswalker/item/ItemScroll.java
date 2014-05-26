@@ -8,6 +8,7 @@ import matgm50.abysswalker.lib.ItemLib;
 import matgm50.abysswalker.lib.ModLib;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
@@ -21,7 +22,7 @@ import java.util.List;
 
 public class ItemScroll extends Item {
 
-    private String key, name;
+    private String name;
     private ScrollEntry entry;
 
     public ItemScroll(ScrollEntry entry) {
@@ -39,6 +40,13 @@ public class ItemScroll extends Item {
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
 
         par3List.add(name);
+
+    }
+
+    @Override
+    public EnumRarity getRarity(ItemStack par1ItemStack) {
+
+        return EnumRarity.uncommon;
 
     }
 

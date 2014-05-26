@@ -2,11 +2,11 @@
 itemGroup.Abysswalker=Abysswalker
 
 #Items
-item.itemScroll.name=Ancient Scroll
+item.itemScroll.name=Archive Scroll
 
 #Blocks
 
 #Scrolls
 scroll.ABYSSWALKER.name=The Abysswalkers
-scroll.ABYSSWALKER.text.0=The Abysswalkers are an order of knights who dedicated their lives to stop the spreading of the abyss.<br>They originate from the Lost Legend Abysswalker Abdo who founded the order. They had a great role in the past withering ages thus rescuing the land from the evil abysslords.
-scroll.ABYSSWALKER.text.1=They became scattered after the siege on Fort Lisa ,their headquarter. The tales of their legends still roam the land but, this is not gonna be for long.
+scroll.ABYSSWALKER.text.0=The Abysswalkers are an order of knights who dedicated their lives to stop the spreading of the abyss.<br>The order was founded by the Lost Legend Abysswalker Abdo. Their role in the past withering ages was vital as if it hadn't been for them, the abyss would have swallowed us long ago.
+scroll.ABYSSWALKER.text.1=They became scattered after the siege on Fort Lisa and now only a shadow of their former self.<br>Tales of their legends still roam the land but, this is not gonna be for long.
