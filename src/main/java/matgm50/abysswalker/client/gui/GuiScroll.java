@@ -1,9 +1,8 @@
 package matgm50.abysswalker.client.gui;
 
-import matgm50.abysswalker.client.gui.scroll.ScrollEntry;
-import matgm50.abysswalker.client.gui.scroll.button.ButtonNext;
-import matgm50.abysswalker.client.gui.scroll.button.ButtonPrev;
-import matgm50.abysswalker.client.gui.scroll.page.ScrollPage;
+import matgm50.abysswalker.api.scroll.ScrollEntry;
+import matgm50.abysswalker.client.gui.button.ButtonScroll;
+import matgm50.abysswalker.api.scroll.page.ScrollPage;
 import matgm50.abysswalker.lib.ModLib;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
@@ -42,8 +41,8 @@ public class GuiScroll extends GuiScreen {
 
         buttonList.clear();
 
-        buttonList.add(buttonPrev = new ButtonPrev(0, startX - 9, startY + 163));
-        buttonList.add(buttonNext = new ButtonNext(1, startX + 123, startY + 163));
+        buttonList.add(buttonPrev = new ButtonScroll(0, startX - 9, startY + 163, true));
+        buttonList.add(buttonNext = new ButtonScroll(1, startX + 123, startY + 163, false));
 
         updateButtons();
 

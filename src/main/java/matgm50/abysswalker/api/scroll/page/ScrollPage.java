@@ -1,4 +1,4 @@
-package matgm50.abysswalker.client.gui.scroll.page;
+package matgm50.abysswalker.api.scroll.page;
 
 /**
  * Created by MasterAbdoTGM50 on 5/23/2014.

@@ -1,4 +1,4 @@
-package matgm50.abysswalker.client.gui.scroll.button;
+package matgm50.abysswalker.client.gui.button;
 
 import matgm50.abysswalker.lib.ModLib;
 import net.minecraft.client.Minecraft;
@@ -10,11 +10,14 @@ import org.lwjgl.opengl.GL11;
  * Created by MasterAbdoTGM50 on 5/23/2014.
  */
 
-public class ButtonNext extends GuiButton {
+public class ButtonScroll extends GuiButton {
 
-    public ButtonNext(int par1, int par2, int par3) {
+    private boolean isPrev;
+
+    public ButtonScroll(int par1, int par2, int par3, boolean par4) {
 
         super(par1, par2, par3, 18, 10, "");
+        isPrev = par4;
 
     }
 
@@ -25,20 +28,28 @@ public class ButtonNext extends GuiButton {
 
             boolean flag = par2 >= this.xPosition && par3 >= this.yPosition && par2 < this.xPosition + this.width && par3 < this.yPosition + this.height;
             int xIncrease = 0;
+            int yIncrease = 0;
+
+            if(!isPrev) {
+
+                xIncrease = 18;
+
+            }
 
             if(getHoverState(flag) == 2) {
 
-                xIncrease = 10;
+                yIncrease = 10;
 
             }
 
             par1Minecraft.renderEngine.bindTexture(new ResourceLocation(ModLib.ID.toLowerCase(), "textures/gui/scroll.png"));
 
             GL11.glColor4f(1F, 1F, 1F, 1F);
-            drawTexturedModalRect(xPosition, yPosition, 18, 168 + xIncrease, 18, 10);
+            drawTexturedModalRect(xPosition, yPosition, 0 + xIncrease, 168 + yIncrease, 18, 10);
 
         }
 
     }
+
 
 }

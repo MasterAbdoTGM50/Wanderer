@@ -1,11 +1,11 @@
-package matgm50.abysswalker.client.gui.scroll;
+package matgm50.abysswalker.api.scroll;
 
-import matgm50.abysswalker.client.gui.scroll.page.ScrollPage;
-import matgm50.abysswalker.client.gui.scroll.page.ScrollPageText;
+import matgm50.abysswalker.api.scroll.page.ScrollPage;
+import matgm50.abysswalker.api.scroll.page.ScrollPageText;
+import matgm50.abysswalker.scroll.ScrollHandler;
 import net.minecraft.util.StatCollector;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Created by MasterAbdoTGM50 on 5/19/2014.
@@ -17,9 +17,10 @@ public class ScrollEntry {
     private int textPageCount = 0;
     private ArrayList<ScrollPage> pages = new ArrayList<ScrollPage>();
 
-    public ScrollEntry(String key) {
+    public ScrollEntry(String key, ScrollPage... pages) {
 
         setKey(key);
+        setPages(pages);
 
     }
 
@@ -55,6 +56,13 @@ public class ScrollEntry {
     public ArrayList getPages() {
 
         return this.pages;
+
+    }
+
+    public ScrollEntry registerEntry() {
+
+        ScrollHandler.addEntry(getKey(), this);
+        return this;
 
     }
 

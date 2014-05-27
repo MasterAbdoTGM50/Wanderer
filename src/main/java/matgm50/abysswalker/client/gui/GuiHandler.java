@@ -3,8 +3,10 @@ package matgm50.abysswalker.client.gui;
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import matgm50.abysswalker.Abysswalker;
-import matgm50.abysswalker.client.gui.scroll.ScrollEntry;
+import matgm50.abysswalker.api.scroll.ScrollEntry;
 import matgm50.abysswalker.item.ItemScroll;
+import matgm50.abysswalker.lib.ScrollLib;
+import matgm50.abysswalker.scroll.ScrollHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
@@ -41,16 +43,15 @@ public class GuiHandler implements IGuiHandler {
 
     private ScrollEntry getCurrentScrollEntry(EntityPlayer player) {
 
-        Item currentItem = player.getCurrentEquippedItem().getItem();
-        if (currentItem != null) {
+        if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemScroll) {
 
-            if(currentItem instanceof ItemScroll) {
+            return ScrollHandler.getEntry(ScrollHandler.getKey(player.getCurrentEquippedItem()));
 
-                return ((ItemScroll)currentItem).getEntry();
+        } else {
 
-            } else {return null;}
+            return ScrollHandler.getEntry(ScrollLib.ABYSSWALKER_KEY);
 
-        } else {return null;}
+        }
 
     }
 

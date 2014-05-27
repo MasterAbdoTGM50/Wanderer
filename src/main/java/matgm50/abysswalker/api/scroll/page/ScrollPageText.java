@@ -1,4 +1,4 @@
-package matgm50.abysswalker.client.gui.scroll.page;
+package matgm50.abysswalker.api.scroll.page;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;

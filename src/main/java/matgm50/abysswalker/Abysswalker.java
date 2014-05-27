@@ -12,6 +12,7 @@ import matgm50.abysswalker.item.ModScrolls;
 import matgm50.abysswalker.lib.ModLib;
 import matgm50.abysswalker.client.gui.GuiHandler;
 import matgm50.abysswalker.proxy.CommonProxy;
+import matgm50.abysswalker.scroll.ScrollHandler;
 import matgm50.abysswalker.util.TabAbysswalker;
 import net.minecraft.creativetab.CreativeTabs;
 
@@ -34,9 +35,10 @@ public class Abysswalker {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
+        ScrollHandler.init();
         GuiHandler.init();
 
-        ModScrolls.init();
+
         ModItems.init();
 
     }
@@ -48,6 +50,8 @@ public class Abysswalker {
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
+
+        ModScrolls.init();
 
     }
 

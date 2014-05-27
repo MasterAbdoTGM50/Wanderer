@@ -3,9 +3,10 @@ package matgm50.abysswalker.item;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import matgm50.abysswalker.Abysswalker;
-import matgm50.abysswalker.client.gui.scroll.ScrollEntry;
 import matgm50.abysswalker.lib.ItemLib;
 import matgm50.abysswalker.lib.ModLib;
+import matgm50.abysswalker.lib.ScrollLib;
+import matgm50.abysswalker.scroll.ScrollHandler;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
@@ -23,23 +24,31 @@ import java.util.List;
 public class ItemScroll extends Item {
 
     private String name;
-    private ScrollEntry entry;
 
-    public ItemScroll(ScrollEntry entry) {
+    public ItemScroll() {
 
         super();
         setUnlocalizedName(ItemLib.SCROLL_NAME);
         setCreativeTab(Abysswalker.tabAbysswalker);
         setMaxStackSize(1);
-        setEntry(entry);
-        setName(entry.getKey());
+
+    }
+
+    @Override
+    public boolean getShareTag() {
+
+        return true;
 
     }
 
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
 
-        par3List.add(name);
+        if(ScrollHandler.getKey(par1ItemStack) != null && ScrollHandler.getKey(par1ItemStack) != "") {
+
+            par3List.add(StatCollector.translateToLocal("scroll." + ScrollHandler.getKey(par1ItemStack) + ".name"));
+
+        }
 
     }
 
@@ -53,7 +62,11 @@ public class ItemScroll extends Item {
     @Override
     public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
 
-        par3EntityPlayer.openGui(Abysswalker.instance, 0, par2World, 0, 0, 0);
+        if(ScrollHandler.getKey(par1ItemStack) != null && ScrollHandler.getKey(par1ItemStack) != "") {
+
+            par3EntityPlayer.openGui(Abysswalker.instance, 0, par2World, 0, 0, 0);
+
+        }
 
         return par1ItemStack;
 
@@ -69,21 +82,5 @@ public class ItemScroll extends Item {
         itemIcon = register.registerIcon(ModLib.ID.toLowerCase() + ":" + "scroll");
 
     }
-
-    private void setEntry(ScrollEntry entry) {
-
-        this.entry = entry;
-
-    }
-
-    public ScrollEntry getEntry() {return this.entry;}
-
-    private void setName(String key) {
-
-        name = StatCollector.translateToLocal("scroll." + key + ".name");
-
-    }
-
-    public String getName() {return name;}
 
 }
