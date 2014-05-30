@@ -1,4 +1,4 @@
-package matgm50.abysswalker.item;
+package matgm50.abysswalker.scroll;
 
 import matgm50.abysswalker.api.scroll.ScrollEntry;
 import matgm50.abysswalker.api.scroll.page.ScrollPageText;
@@ -9,7 +9,7 @@ import matgm50.abysswalker.scroll.ScrollHandler;
  * Created by MasterAbdoTGM50 on 5/25/2014.
  */
 
-public class ModScrolls {
+public class ScrollEntries {
 
     public static ScrollEntry ABYSSWALKER;
 

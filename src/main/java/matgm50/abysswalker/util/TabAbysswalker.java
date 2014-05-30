@@ -21,7 +21,7 @@ public class TabAbysswalker extends CreativeTabs {
     @Override
     public Item getTabIconItem() {
 
-        return Items.ender_eye;
+        return ModItems.itemScroll;
 
     }
 }
