@@ -2,22 +2,23 @@ package matgm50.abysswalker.client.gui.button;
 
 import matgm50.abysswalker.lib.ModLib;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.SoundHandler;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 /**
- * Created by MasterAbdoTGM50 on 5/23/2014.
+ * Created by MasterAbdoTGM50 on 7/1/2014.
  */
 
-public class ButtonScroll extends GuiButton {
+public class ButtonSound extends GuiButton {
 
-    private boolean isPrev;
+    private boolean isPlay;
 
-    public ButtonScroll(int par1, int par2, int par3, boolean par4) {
+    public ButtonSound(int par1, int par2, int par3, boolean par4) {
 
         super(par1, par2, par3, 18, 10, "");
-        isPrev = par4;
+        isPlay = par4;
 
     }
 
@@ -26,17 +27,17 @@ public class ButtonScroll extends GuiButton {
 
         if(enabled) {
 
-            boolean flag = par2 >= this.xPosition && par3 >= this.yPosition && par2 < this.xPosition + this.width && par3 < this.yPosition + this.height;
+            boolean isHovering = par2 >= this.xPosition && par3 >= this.yPosition && par2 < this.xPosition + this.width && par3 < this.yPosition + this.height;
             int xIncrease = 0;
             int yIncrease = 0;
 
-            if(!isPrev) {
+            if(isPlay) {
 
                 xIncrease = 18;
 
             }
 
-            if(getHoverState(flag) == 2) {
+            if(getHoverState(isHovering) == 2) {
 
                 yIncrease = 10;
 
@@ -45,11 +46,13 @@ public class ButtonScroll extends GuiButton {
             par1Minecraft.renderEngine.bindTexture(new ResourceLocation(ModLib.ID.toLowerCase(), "textures/gui/scroll.png"));
 
             GL11.glColor4f(1F, 1F, 1F, 1F);
-            drawTexturedModalRect(xPosition, yPosition, 0 + xIncrease, 168 + yIncrease, 18, 10);
+            drawTexturedModalRect(xPosition, yPosition, xIncrease, 168 + yIncrease, 18, 10);
 
         }
 
     }
 
+    @Override
+    public void func_146113_a(SoundHandler p_146113_1_) {}
 
 }

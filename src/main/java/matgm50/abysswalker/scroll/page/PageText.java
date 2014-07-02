@@ -1,4 +1,4 @@
-package matgm50.abysswalker.api.scroll.page;
+package matgm50.abysswalker.scroll.page;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * Created by MasterAbdoTGM50 on 5/23/2014.
  */
 
-public class ScrollPageText extends ScrollPage {
+public class PageText extends Page {
 
     private String text;
 

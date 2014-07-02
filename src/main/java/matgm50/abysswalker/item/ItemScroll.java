@@ -5,8 +5,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 import matgm50.abysswalker.Abysswalker;
 import matgm50.abysswalker.lib.ItemLib;
 import matgm50.abysswalker.lib.ModLib;
-import matgm50.abysswalker.lib.ScrollLib;
 import matgm50.abysswalker.scroll.ScrollHandler;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
@@ -22,8 +22,6 @@ import java.util.List;
  */
 
 public class ItemScroll extends Item {
-
-    private String name;
 
     public ItemScroll() {
 
@@ -44,11 +42,7 @@ public class ItemScroll extends Item {
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
 
-        if(ScrollHandler.getKey(par1ItemStack) != null && ScrollHandler.getKey(par1ItemStack) != "") {
-
-            par3List.add(StatCollector.translateToLocal("scroll." + ScrollHandler.getKey(par1ItemStack) + ".name"));
-
-        }
+        par3List.add(StatCollector.translateToLocal("scroll." + ScrollHandler.getKey(par1ItemStack) + ".name"));
 
     }
 
@@ -62,11 +56,7 @@ public class ItemScroll extends Item {
     @Override
     public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
 
-        if(ScrollHandler.getKey(par1ItemStack) != null && ScrollHandler.getKey(par1ItemStack) != "") {
-
-            par3EntityPlayer.openGui(Abysswalker.instance, 0, par2World, 0, 0, 0);
-
-        }
+        par3EntityPlayer.openGui(Abysswalker.instance, 0, par2World, 0, 0, 0);
 
         return par1ItemStack;
 

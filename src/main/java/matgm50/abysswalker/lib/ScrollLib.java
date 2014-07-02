@@ -6,6 +6,6 @@ package matgm50.abysswalker.lib;
 
 public class ScrollLib {
 
-    public static final String ABYSSWALKER_KEY = "ABYSSWALKER";
+    public static final String LEGACY_KEY = "LEGACY";
 
 }

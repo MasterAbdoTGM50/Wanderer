@@ -35,10 +35,11 @@ public class Abysswalker {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
-        ScrollHandler.init();
         GuiHandler.init();
 
         ModItems.init();
+
+        ScrollHandler.init();
 
     }
 

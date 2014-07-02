@@ -1,8 +1,7 @@
-package matgm50.abysswalker.api.scroll;
+package matgm50.abysswalker.scroll;
 
-import matgm50.abysswalker.api.scroll.page.ScrollPage;
-import matgm50.abysswalker.api.scroll.page.ScrollPageText;
-import matgm50.abysswalker.scroll.ScrollHandler;
+import matgm50.abysswalker.scroll.page.Page;
+import matgm50.abysswalker.scroll.page.PageText;
 import net.minecraft.util.StatCollector;
 
 import java.util.ArrayList;
@@ -15,9 +14,9 @@ public class ScrollEntry {
 
     private String key;
     private int textPageCount = 0;
-    private ArrayList<ScrollPage> pages = new ArrayList<ScrollPage>();
+    private ArrayList<Page> pages = new ArrayList<Page>();
 
-    public ScrollEntry(String key, ScrollPage... pages) {
+    public ScrollEntry(String key, Page... pages) {
 
         setKey(key);
         setPages(pages);
@@ -36,13 +35,13 @@ public class ScrollEntry {
 
     }
 
-    public void setPages(ScrollPage... pages) {
+    public void setPages(Page... pages) {
 
         for(int i = 0; i < pages.length; i++) {
 
-            if(pages[i] instanceof ScrollPageText) {
+            if(pages[i] instanceof PageText) {
 
-                ((ScrollPageText)pages[i]).setText(StatCollector.translateToLocal("scroll." + key + ".text" + "." + textPageCount));
+                ((PageText)pages[i]).setText(StatCollector.translateToLocal("scroll." + key + ".text" + "." + textPageCount));
                 textPageCount++;
 
             }

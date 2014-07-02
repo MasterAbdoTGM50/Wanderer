@@ -1,7 +1,9 @@
 package matgm50.abysswalker.scroll;
 
-import matgm50.abysswalker.api.scroll.ScrollEntry;
+import matgm50.abysswalker.item.ItemScroll;
+import matgm50.abysswalker.item.ModItems;
 import matgm50.abysswalker.lib.ScrollLib;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
@@ -33,7 +35,17 @@ public class ScrollHandler {
 
     }
 
-    public static ItemStack createScroll(ItemStack stack, String key) {
+    public static ItemStack createScroll(String key) {
+
+        ItemStack scroll = new ItemStack(ModItems.itemScroll);
+
+        setKey(scroll, key);
+
+        return scroll;
+
+    }
+
+    public static void setKey(ItemStack stack, String key) {
 
         if(stack.stackTagCompound == null) {
 
@@ -42,8 +54,6 @@ public class ScrollHandler {
         }
 
         stack.stackTagCompound.setString("key", key);
-
-        return stack;
 
     }
 
@@ -57,12 +67,27 @@ public class ScrollHandler {
 
             } else {
 
-                return null;
+                return ScrollLib.LEGACY_KEY;
             }
 
         } else {
 
-            return null;
+            return ScrollLib.LEGACY_KEY;
+
+        }
+
+    }
+
+
+    public static ScrollEntry getEquippedScrollEntry(EntityPlayer player) {
+
+        if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemScroll) {
+
+            return ScrollHandler.getEntry(ScrollHandler.getKey(player.getCurrentEquippedItem()));
+
+        } else {
+
+            return ScrollHandler.getEntry(ScrollLib.LEGACY_KEY);
 
         }
 

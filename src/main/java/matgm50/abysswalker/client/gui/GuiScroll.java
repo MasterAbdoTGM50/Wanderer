@@ -1,8 +1,8 @@
 package matgm50.abysswalker.client.gui;
 
-import matgm50.abysswalker.api.scroll.ScrollEntry;
-import matgm50.abysswalker.client.gui.button.ButtonScroll;
-import matgm50.abysswalker.api.scroll.page.ScrollPage;
+import matgm50.abysswalker.client.gui.button.ButtonNext;
+import matgm50.abysswalker.scroll.ScrollEntry;
+import matgm50.abysswalker.scroll.page.Page;
 import matgm50.abysswalker.lib.ModLib;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
@@ -17,12 +17,12 @@ import java.util.ArrayList;
 
 public class GuiScroll extends GuiScreen {
 
-    private final int scrollWidth = 132;
-    private final int scrollHeight = 168;
-    private int startX, startY, startButtonX, startButtonY;
+    private final int guiWidth = 132;
+    private final int guiHeight = 168;
+    private int startX, startY;
     private static final ResourceLocation texture = new ResourceLocation(ModLib.ID.toLowerCase(), "textures/gui/scroll.png");
-    private GuiButton buttonPrev, buttonNext;
-    private ArrayList<ScrollPage> pages = new ArrayList<ScrollPage>();
+    private GuiButton buttonPrev, buttonNext, buttonPlay, buttonStop;
+    private ArrayList<Page> pages = new ArrayList<Page>();
     private int currentlyOpenedPage = 0;
 
     public GuiScroll(ScrollEntry entry) {
@@ -36,13 +36,13 @@ public class GuiScroll extends GuiScreen {
 
         super.initGui();
 
-        startX = (width - scrollWidth) / 2;
-        startY = (height - scrollHeight) / 2;
+        startX = (width - guiWidth) / 2;
+        startY = (height - guiHeight) / 2;
 
         buttonList.clear();
 
-        buttonList.add(buttonPrev = new ButtonScroll(0, startX - 9, startY + 163, true));
-        buttonList.add(buttonNext = new ButtonScroll(1, startX + 123, startY + 163, false));
+        buttonList.add(buttonPrev = new ButtonNext(0, startX - 9, startY + (guiHeight - 5), false));
+        buttonList.add(buttonNext = new ButtonNext(1, startX + (guiWidth - 9), startY + (guiHeight - 5), true));
 
         updateButtons();
 
@@ -92,6 +92,11 @@ public class GuiScroll extends GuiScreen {
                 updateButtons();
                 updateScreen();
                 break;
+            case 2:
+                //Minecraft.getMinecraft().getSoundHandler().playSound(PositionedSoundRecord.func_147674_a(new ResourceLocation(ModLib.ID.toLowerCase(), "scroll.sound.test"), 1.0F));
+                updateButtons();
+                updateScreen();
+                break;
         }
 
     }
@@ -102,7 +107,7 @@ public class GuiScroll extends GuiScreen {
         GL11.glColor4f(1, 1, 1, 1);
 
         mc.getTextureManager().bindTexture(texture);
-        drawTexturedModalRect(startX, startY, 0, 0, scrollWidth, scrollHeight);
+        drawTexturedModalRect(startX, startY, 0, 0, guiWidth, guiHeight);
 
         if((pages.get(currentlyOpenedPage)) != null) {
 
