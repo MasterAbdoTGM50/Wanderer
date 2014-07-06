@@ -13,12 +13,9 @@ import org.lwjgl.opengl.GL11;
 
 public class ButtonSound extends GuiButton {
 
-    private boolean isPlay;
-
-    public ButtonSound(int par1, int par2, int par3, boolean par4) {
+    public ButtonSound(int par1, int par2, int par3) {
 
         super(par1, par2, par3, 18, 10, "");
-        isPlay = par4;
 
     }
 
@@ -31,12 +28,6 @@ public class ButtonSound extends GuiButton {
             int xIncrease = 0;
             int yIncrease = 0;
 
-            if(isPlay) {
-
-                xIncrease = 18;
-
-            }
-
             if(getHoverState(isHovering) == 2) {
 
                 yIncrease = 10;
@@ -46,7 +37,7 @@ public class ButtonSound extends GuiButton {
             par1Minecraft.renderEngine.bindTexture(new ResourceLocation(ModLib.ID.toLowerCase(), "textures/gui/scroll.png"));
 
             GL11.glColor4f(1F, 1F, 1F, 1F);
-            drawTexturedModalRect(xPosition, yPosition, xIncrease, 168 + yIncrease, 18, 10);
+            drawTexturedModalRect(xPosition, yPosition, 36, 168 + yIncrease, 10, 10);
 
         }
 

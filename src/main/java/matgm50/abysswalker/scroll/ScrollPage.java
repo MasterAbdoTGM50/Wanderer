@@ -1,7 +1,8 @@
-package matgm50.abysswalker.scroll.page;
+package matgm50.abysswalker.scroll;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.ArrayList;
 
@@ -9,14 +10,12 @@ import java.util.ArrayList;
  * Created by MasterAbdoTGM50 on 5/23/2014.
  */
 
-public class PageText extends Page {
+public class ScrollPage {
 
     private String text;
 
-    @Override
-    public void drawScreen(int startX, int startY) {
+    public void drawScreen(FontRenderer fontRenderer, int startX, int startY) {
 
-        FontRenderer fontRenderer = Minecraft.getMinecraft().fontRenderer;
         drawText(fontRenderer, text, startX + 10, startY + 10);
 
     }
