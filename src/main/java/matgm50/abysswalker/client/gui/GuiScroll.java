@@ -95,11 +95,13 @@ public class GuiScroll extends GuiScreen {
                 currentlyOpenedPage--;
                 updateButtons();
                 updateScreen();
+                stopSound();
                 break;
             case 1:
                 currentlyOpenedPage++;
                 updateButtons();
                 updateScreen();
+                stopSound();
                 break;
             case 2:
                 if (!isPlayingSound) {
@@ -123,16 +125,8 @@ public class GuiScroll extends GuiScreen {
 
     public void playSound() {
 
-        if(sound != null) {
-
-            Minecraft.getMinecraft().getSoundHandler().playSound(sound);
-
-        } else {
-
-            sound = new ScrollSound(entry.getKey(), currentlyOpenedPage);
-            Minecraft.getMinecraft().getSoundHandler().playSound(sound);
-
-        }
+        sound = new ScrollSound(entry.getKey(), currentlyOpenedPage);
+        Minecraft.getMinecraft().getSoundHandler().playSound(sound);
 
     }
 

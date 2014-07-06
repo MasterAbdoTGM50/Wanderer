@@ -63,9 +63,6 @@ public class ItemScroll extends Item {
     }
 
     @Override
-    public boolean isFull3D() {return true;}
-
-    @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister register) {
 

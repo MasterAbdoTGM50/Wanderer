@@ -1,3 +1,4 @@
 {
-   "scroll.LEGACY.sound.0": {"category": "master","sounds": ["scroll/test"]}
+   "scroll.LEGACY.sound.0": {"category": "master","sounds": ["scroll/legacy0"]},
+   "scroll.LEGACY.sound.1": {"category": "master","sounds": ["scroll/legacy1"]}
 }
