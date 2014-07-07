@@ -12,12 +12,6 @@ public class ScrollEntries {
 
     public static void init() {
 
-        initEntries();
-
-    }
-
-    public static void initEntries() {
-
         LEGACY = new ScrollEntry(ScrollLib.LEGACY_KEY, 2).registerEntry();
 
     }

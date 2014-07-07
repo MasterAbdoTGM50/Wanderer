@@ -33,13 +33,14 @@ public class ScrollEntry {
 
     }
 
-    public void createPages(int pagesCount) {
+    public void createPages(int pagesAmount) {
 
-        for(int i = 0; i < pagesCount; i++) {
+        for(int i = 0; i < pagesAmount; i++) {
 
             ScrollPage page = new ScrollPage();
 
             page.setText(StatCollector.translateToLocal("scroll." + key + ".text" + "." + pageCount));
+            page.setSound(key, pageCount);
             pageCount++;
 
             this.pages.add(page);

@@ -1,13 +1,10 @@
 package matgm50.abysswalker.client.gui;
 
 import matgm50.abysswalker.client.gui.button.ButtonNext;
-import matgm50.abysswalker.client.gui.button.ButtonSound;
 import matgm50.abysswalker.scroll.ScrollEntry;
 import matgm50.abysswalker.scroll.ScrollPage;
 import matgm50.abysswalker.lib.ModLib;
-import matgm50.abysswalker.scroll.ScrollSound;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.ResourceLocation;
@@ -25,16 +22,12 @@ public class GuiScroll extends GuiScreen {
     private final int guiHeight = 168;
     private int startX, startY;
     private static final ResourceLocation texture = new ResourceLocation(ModLib.ID.toLowerCase(), "textures/gui/scroll.png");
-    private GuiButton buttonPrev, buttonNext, buttonSound;
-    private ScrollSound sound;
-    private boolean isPlayingSound = false;
-    private ScrollEntry entry;
+    private GuiButton buttonPrev, buttonNext;
     private ArrayList<ScrollPage> pages = new ArrayList<ScrollPage>();
     private int currentlyOpenedPage = 0;
 
     public GuiScroll(ScrollEntry entry) {
 
-        this.entry = entry;
         this.pages = entry.getPages();
 
     }
@@ -47,11 +40,12 @@ public class GuiScroll extends GuiScreen {
         startX = (width - guiWidth) / 2;
         startY = (height - guiHeight) / 2;
 
+        playSound();
+
         buttonList.clear();
 
         buttonList.add(buttonPrev = new ButtonNext(0, startX - 9, startY + (guiHeight - 5), false));
         buttonList.add(buttonNext = new ButtonNext(1, startX + (guiWidth - 9), startY + (guiHeight - 5), true));
-        buttonList.add(buttonSound = new ButtonSound(2, startX + (guiWidth / 2), startY + (guiHeight - 5)));
 
         updateButtons();
 
@@ -92,29 +86,16 @@ public class GuiScroll extends GuiScreen {
         switch(par1GuiButton.id) {
 
             case 0:
+                stopSound();
                 currentlyOpenedPage--;
+                playSound();
                 updateButtons();
                 updateScreen();
-                stopSound();
                 break;
             case 1:
-                currentlyOpenedPage++;
-                updateButtons();
-                updateScreen();
                 stopSound();
-                break;
-            case 2:
-                if (!isPlayingSound) {
-
-                    playSound();
-                    isPlayingSound = true;
-
-                } else {
-
-                    stopSound();
-                    isPlayingSound = false;
-
-                }
+                currentlyOpenedPage++;
+                playSound();
                 updateButtons();
                 updateScreen();
                 break;
@@ -125,14 +106,13 @@ public class GuiScroll extends GuiScreen {
 
     public void playSound() {
 
-        sound = new ScrollSound(entry.getKey(), currentlyOpenedPage);
-        Minecraft.getMinecraft().getSoundHandler().playSound(sound);
+        Minecraft.getMinecraft().getSoundHandler().playSound((pages.get(currentlyOpenedPage).getSound()));
 
     }
 
     public void stopSound() {
 
-        Minecraft.getMinecraft().getSoundHandler().stopSound(sound);
+        Minecraft.getMinecraft().getSoundHandler().stopSound((pages.get(currentlyOpenedPage).getSound()));
 
     }
 

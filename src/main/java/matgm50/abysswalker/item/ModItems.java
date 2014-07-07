@@ -10,11 +10,9 @@ import net.minecraft.item.Item;
 
 public class ModItems {
 
-    public static Item itemScroll;
+    public static Item itemScroll = new ItemScroll();
 
     public static void init() {
-
-        itemScroll = new ItemScroll();
 
         GameRegistry.registerItem(itemScroll, ItemLib.SCROLL_NAME);
 

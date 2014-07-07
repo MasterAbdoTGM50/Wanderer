@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class ScrollPage {
 
     private String text;
+    private ScrollSound sound;
 
     public void drawScreen(FontRenderer fontRenderer, int startX, int startY) {
 
@@ -89,6 +90,18 @@ public class ScrollPage {
     public String getText() {
 
         return this.text;
+
+    }
+
+    public void setSound(String key, int index) {
+
+        this.sound = new ScrollSound(key, index);
+
+    }
+
+    public ScrollSound getSound() {
+
+        return this.sound;
 
     }
 

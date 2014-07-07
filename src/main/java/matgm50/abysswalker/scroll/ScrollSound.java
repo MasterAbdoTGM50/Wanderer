@@ -13,10 +13,10 @@ public class ScrollSound implements ISound {
     private String key;
     private int index;
 
-    public ScrollSound(String key, int pageIndex) {
+    public ScrollSound(String key, int index) {
 
         this.key = key;
-        this.index = pageIndex;
+        this.index = index;
 
     }
 
