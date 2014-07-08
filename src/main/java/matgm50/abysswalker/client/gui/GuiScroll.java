@@ -1,16 +1,12 @@
 package matgm50.abysswalker.client.gui;
 
 import matgm50.abysswalker.client.gui.button.ButtonNext;
-import matgm50.abysswalker.scroll.ScrollEntry;
-import matgm50.abysswalker.scroll.ScrollPage;
+import matgm50.abysswalker.api.scroll.ScrollEntry;
 import matgm50.abysswalker.lib.ModLib;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
-
-import java.util.ArrayList;
 
 /**
  * Created by MasterAbdoTGM50 on 4/26/2014.
@@ -23,12 +19,12 @@ public class GuiScroll extends GuiScreen {
     private int startX, startY;
     private static final ResourceLocation texture = new ResourceLocation(ModLib.ID.toLowerCase(), "textures/gui/scroll.png");
     private GuiButton buttonPrev, buttonNext;
-    private ArrayList<ScrollPage> pages = new ArrayList<ScrollPage>();
+    private ScrollEntry entry;
     private int currentlyOpenedPage = 0;
 
     public GuiScroll(ScrollEntry entry) {
 
-        this.pages = entry.getPages();
+        this.entry = entry;
 
     }
 
@@ -44,8 +40,8 @@ public class GuiScroll extends GuiScreen {
 
         buttonList.clear();
 
-        buttonList.add(buttonPrev = new ButtonNext(0, startX - 9, startY + (guiHeight - 5), false));
-        buttonList.add(buttonNext = new ButtonNext(1, startX + (guiWidth - 9), startY + (guiHeight - 5), true));
+        buttonList.add(buttonPrev = new ButtonNext(0, startX, startY + (guiHeight - 5), false));
+        buttonList.add(buttonNext = new ButtonNext(1, startX + (guiWidth - 18), startY + (guiHeight - 5), true));
 
         updateButtons();
 
@@ -58,12 +54,12 @@ public class GuiScroll extends GuiScreen {
             buttonNext.enabled = true;
             buttonPrev.enabled = false;
 
-        } else if(currentlyOpenedPage > 0 && currentlyOpenedPage < pages.size() - 1) {
+        } else if(currentlyOpenedPage > 0 && currentlyOpenedPage < entry.getPages().size() - 1) {
 
             buttonNext.enabled = true;
             buttonPrev.enabled = true;
 
-        } else if(currentlyOpenedPage == pages.size() - 1) {
+        } else if(currentlyOpenedPage == entry.getPages().size() - 1) {
 
             buttonNext.enabled = false;
             buttonPrev.enabled = true;
@@ -106,13 +102,13 @@ public class GuiScroll extends GuiScreen {
 
     public void playSound() {
 
-        Minecraft.getMinecraft().getSoundHandler().playSound((pages.get(currentlyOpenedPage).getSound()));
+        (entry.getPage(currentlyOpenedPage)).playSound();
 
     }
 
     public void stopSound() {
 
-        Minecraft.getMinecraft().getSoundHandler().stopSound((pages.get(currentlyOpenedPage).getSound()));
+        (entry.getPage(currentlyOpenedPage)).stopSound();
 
     }
 
@@ -124,9 +120,9 @@ public class GuiScroll extends GuiScreen {
         mc.getTextureManager().bindTexture(texture);
         drawTexturedModalRect(startX, startY, 0, 0, guiWidth, guiHeight);
 
-        if((pages.get(currentlyOpenedPage)) != null) {
+        if((entry.getPage(currentlyOpenedPage)) != null) {
 
-            (pages.get(currentlyOpenedPage)).drawScreen(fontRendererObj, startX, startY);
+            (entry.getPage(currentlyOpenedPage)).drawScreen(startX, startY);
 
         }
 

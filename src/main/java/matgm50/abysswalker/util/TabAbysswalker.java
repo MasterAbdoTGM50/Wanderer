@@ -2,8 +2,6 @@ package matgm50.abysswalker.util;
 
 import matgm50.abysswalker.item.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
 /**

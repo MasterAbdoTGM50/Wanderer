@@ -1,6 +1,5 @@
-package matgm50.abysswalker.scroll;
+package matgm50.abysswalker.api.scroll.util;
 
-import matgm50.abysswalker.lib.ModLib;
 import net.minecraft.client.audio.ISound;
 import net.minecraft.util.ResourceLocation;
 
@@ -10,18 +9,15 @@ import net.minecraft.util.ResourceLocation;
 
 public class ScrollSound implements ISound {
 
-    private String key;
-    private int index;
+    private String soundEvent;
 
-    public ScrollSound(String key, int index) {
+    public ScrollSound(String soundEvent) {
 
-        this.key = key;
-        this.index = index;
-
+        this.soundEvent = soundEvent;
     }
 
     @Override
-    public ResourceLocation getPositionedSoundLocation() {return new ResourceLocation(ModLib.ID.toLowerCase(), "scroll." + key + ".sound." + index);}
+    public ResourceLocation getPositionedSoundLocation() {return new ResourceLocation("abysswalker", soundEvent);}
 
     @Override
     public boolean canRepeat() {return false;}

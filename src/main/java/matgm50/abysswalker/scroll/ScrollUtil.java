@@ -1,5 +1,7 @@
 package matgm50.abysswalker.scroll;
 
+import matgm50.abysswalker.api.scroll.ScrollEntry;
+import matgm50.abysswalker.api.scroll.ScrollRegistry;
 import matgm50.abysswalker.item.ItemScroll;
 import matgm50.abysswalker.item.ModItems;
 import matgm50.abysswalker.lib.ScrollLib;
@@ -7,43 +9,11 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
-import java.util.HashMap;
-
 /**
- * Created by MasterAbdoTGM50 on 5/26/2014.
+ * Created by MasterAbdoTGM50 on 7/8/2014.
  */
 
-public class ScrollHandler {
-
-    public static HashMap<String, ScrollEntry> entries;
-
-    public static void init() {
-
-        entries = new HashMap<String, ScrollEntry>();
-
-    }
-
-    public static void addEntry(String key, ScrollEntry entry) {
-
-        entries.put(key, entry);
-
-    }
-
-    public static ScrollEntry getEntry(String key) {
-
-        return entries.get(key);
-
-    }
-
-    public static ItemStack createScroll(String key) {
-
-        ItemStack scroll = new ItemStack(ModItems.itemScroll);
-
-        setKey(scroll, key);
-
-        return scroll;
-
-    }
+public class ScrollUtil {
 
     public static void setKey(ItemStack stack, String key) {
 
@@ -78,16 +48,25 @@ public class ScrollHandler {
 
     }
 
+    public static ItemStack createScroll(String key) {
+
+        ItemStack scroll = new ItemStack(ModItems.itemScroll);
+
+        setKey(scroll, key);
+
+        return scroll;
+
+    }
 
     public static ScrollEntry getEquippedScrollEntry(EntityPlayer player) {
 
         if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemScroll) {
 
-            return ScrollHandler.getEntry(ScrollHandler.getKey(player.getCurrentEquippedItem()));
+            return ScrollRegistry.getEntry(getKey(player.getCurrentEquippedItem()));
 
         } else {
 
-            return ScrollHandler.getEntry(ScrollLib.LEGACY_KEY);
+            return ScrollRegistry.getEntry(ScrollLib.LEGACY_KEY);
 
         }
 

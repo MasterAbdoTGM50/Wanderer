@@ -1,5 +1,8 @@
 package matgm50.abysswalker.scroll;
 
+import matgm50.abysswalker.api.scroll.ScrollEntry;
+import matgm50.abysswalker.api.scroll.ScrollRegistry;
+import matgm50.abysswalker.api.scroll.page.ScrollPageText;
 import matgm50.abysswalker.lib.ScrollLib;
 
 /**
@@ -8,11 +11,11 @@ import matgm50.abysswalker.lib.ScrollLib;
 
 public class ScrollEntries {
 
-    public static ScrollEntry LEGACY;
+    public static ScrollEntry LEGACY = new ScrollEntry(ScrollLib.LEGACY_KEY, new ScrollPageText(), new ScrollPageText());
 
     public static void init() {
 
-        LEGACY = new ScrollEntry(ScrollLib.LEGACY_KEY, 2).registerEntry();
+        ScrollRegistry.registerScroll(ScrollLib.LEGACY_KEY, LEGACY);
 
     }
 

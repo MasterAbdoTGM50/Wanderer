@@ -3,7 +3,8 @@ package matgm50.abysswalker.client.gui;
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import matgm50.abysswalker.Abysswalker;
-import matgm50.abysswalker.scroll.ScrollHandler;
+import matgm50.abysswalker.api.scroll.ScrollRegistry;
+import matgm50.abysswalker.scroll.ScrollUtil;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
@@ -30,7 +31,7 @@ public class GuiHandler implements IGuiHandler {
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 
         switch(ID) {
-            case 0 : return new GuiScroll(ScrollHandler.getEquippedScrollEntry(player));
+            case 0 : return new GuiScroll(ScrollUtil.getEquippedScrollEntry(player));
         }
 
         return null;

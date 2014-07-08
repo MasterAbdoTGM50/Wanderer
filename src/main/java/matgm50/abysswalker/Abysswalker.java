@@ -7,12 +7,12 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import matgm50.abysswalker.api.scroll.ScrollRegistry;
 import matgm50.abysswalker.item.ModItems;
 import matgm50.abysswalker.scroll.ScrollEntries;
 import matgm50.abysswalker.lib.ModLib;
 import matgm50.abysswalker.client.gui.GuiHandler;
 import matgm50.abysswalker.proxy.CommonProxy;
-import matgm50.abysswalker.scroll.ScrollHandler;
 import matgm50.abysswalker.util.TabAbysswalker;
 import net.minecraft.creativetab.CreativeTabs;
 
@@ -39,7 +39,8 @@ public class Abysswalker {
 
         ModItems.init();
 
-        ScrollHandler.init();
+        ScrollRegistry.init();
+        ScrollEntries.init();
 
     }
 
@@ -50,8 +51,6 @@ public class Abysswalker {
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-
-        ScrollEntries.init();
 
     }
 
