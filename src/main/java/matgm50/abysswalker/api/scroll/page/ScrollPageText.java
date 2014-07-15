@@ -13,7 +13,6 @@ import java.util.ArrayList;
 public class ScrollPageText extends ScrollPage {
 
     private String text;
-    private ScrollSound sound;
 
     @Override
     public void drawScreen(int startX, int startY) {
@@ -91,40 +90,6 @@ public class ScrollPageText extends ScrollPage {
     public String getText() {
 
         return this.text;
-
-    }
-
-    @Override
-    public void playSound() {
-
-        if(this.sound != null) {
-
-            Minecraft.getMinecraft().getSoundHandler().playSound(sound);
-
-        }
-
-    }
-
-    @Override
-    public void stopSound() {
-
-        if(this.sound != null) {
-
-            Minecraft.getMinecraft().getSoundHandler().stopSound(sound);
-
-        }
-
-    }
-
-    public void setSound(String soundEvent) {
-
-        this.sound = new ScrollSound(soundEvent);
-
-    }
-
-    public ScrollSound getSound() {
-
-        return this.sound;
 
     }
 

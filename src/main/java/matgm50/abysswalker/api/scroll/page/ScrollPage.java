@@ -8,8 +8,4 @@ public abstract class ScrollPage {
 
     public abstract void drawScreen(int startX, int startY);
 
-    public abstract void playSound();
-
-    public abstract void stopSound();
-
 }

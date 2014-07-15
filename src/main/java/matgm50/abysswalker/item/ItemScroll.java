@@ -55,7 +55,11 @@ public class ItemScroll extends Item {
     @Override
     public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
 
-        par3EntityPlayer.openGui(Abysswalker.instance, 0, par2World, 0, 0, 0);
+        if(par2World.isRemote) {
+
+            par3EntityPlayer.openGui(Abysswalker.instance, 0, par2World, 0, 0, 0);
+
+        }
 
         return par1ItemStack;
 

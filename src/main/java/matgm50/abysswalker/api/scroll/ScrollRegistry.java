@@ -8,13 +8,7 @@ import java.util.HashMap;
 
 public class ScrollRegistry {
 
-    public static HashMap<String, ScrollEntry> entries;
-
-    public static void init() {
-
-        entries = new HashMap<String, ScrollEntry>();
-
-    }
+    public static HashMap<String, ScrollEntry> entries = new HashMap<String, ScrollEntry>();
 
     public static void registerScroll(String key, ScrollEntry entry) {
 

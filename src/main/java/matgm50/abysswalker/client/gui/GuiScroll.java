@@ -1,10 +1,15 @@
 package matgm50.abysswalker.client.gui;
 
+import matgm50.abysswalker.api.scroll.util.ScrollSound;
 import matgm50.abysswalker.client.gui.button.ButtonNext;
 import matgm50.abysswalker.api.scroll.ScrollEntry;
+import matgm50.abysswalker.client.gui.button.ButtonSound;
 import matgm50.abysswalker.lib.ModLib;
+import matgm50.abysswalker.scroll.ScrollUtil;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
@@ -18,13 +23,14 @@ public class GuiScroll extends GuiScreen {
     private final int guiHeight = 168;
     private int startX, startY;
     private static final ResourceLocation texture = new ResourceLocation(ModLib.ID.toLowerCase(), "textures/gui/scroll.png");
-    private GuiButton buttonPrev, buttonNext;
+    private GuiButton buttonPrev, buttonNext, buttonSound;
     private ScrollEntry entry;
     private int currentlyOpenedPage = 0;
+    private boolean isPlayingSound = false;
 
-    public GuiScroll(ScrollEntry entry) {
+    public GuiScroll(EntityPlayer player) {
 
-        this.entry = entry;
+        this.entry = ScrollUtil.getEquippedScrollEntry(player);
 
     }
 
@@ -36,12 +42,11 @@ public class GuiScroll extends GuiScreen {
         startX = (width - guiWidth) / 2;
         startY = (height - guiHeight) / 2;
 
-        playSound();
-
         buttonList.clear();
 
         buttonList.add(buttonPrev = new ButtonNext(0, startX, startY + (guiHeight - 5), false));
         buttonList.add(buttonNext = new ButtonNext(1, startX + (guiWidth - 18), startY + (guiHeight - 5), true));
+        buttonList.add(buttonSound = new ButtonSound(2, startX + ((guiWidth / 2) - 5), startY + (guiHeight - 5)));
 
         updateButtons();
 
@@ -82,33 +87,51 @@ public class GuiScroll extends GuiScreen {
         switch(par1GuiButton.id) {
 
             case 0:
-                stopSound();
+                updateSound();
                 currentlyOpenedPage--;
-                playSound();
                 updateButtons();
                 updateScreen();
                 break;
             case 1:
-                stopSound();
+                updateSound();
                 currentlyOpenedPage++;
-                playSound();
                 updateButtons();
                 updateScreen();
+                break;
+            case 2:
+                if(!isPlayingSound) {
+
+                    playSound();
+                    isPlayingSound = true;
+
+                } else if(isPlayingSound) {
+
+                    stopSound();
+                    isPlayingSound = false;
+
+                }
                 break;
 
         }
 
     }
 
+    public void updateSound() {
+
+        stopSound();
+        isPlayingSound = false;
+
+    }
+
     public void playSound() {
 
-        (entry.getPage(currentlyOpenedPage)).playSound();
+        Minecraft.getMinecraft().getSoundHandler().playSound(entry.getSound(currentlyOpenedPage));
 
     }
 
     public void stopSound() {
 
-        (entry.getPage(currentlyOpenedPage)).stopSound();
+        Minecraft.getMinecraft().getSoundHandler().stopSound(entry.getSound(currentlyOpenedPage));
 
     }
 
