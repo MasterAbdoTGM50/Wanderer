@@ -1,7 +1,6 @@
-package matgm50.abysswalker.scroll;
+package matgm50.abysswalker.util.hooker;
 
-import matgm50.abysswalker.api.scroll.ScrollEntry;
-import matgm50.abysswalker.api.scroll.ScrollRegistry;
+import matgm50.abysswalker.scroll.ScrollEntry;
 import matgm50.abysswalker.item.ItemScroll;
 import matgm50.abysswalker.item.ModItems;
 import matgm50.abysswalker.lib.ScrollLib;
@@ -9,13 +8,29 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
+import java.util.HashMap;
+
 /**
- * Created by MasterAbdoTGM50 on 7/8/2014.
+ * Created by MasterAbdoTGM50 on 7/15/2014.
  */
 
-public class ScrollUtil {
+public class ScrollHooker {
 
-    public static void setKey(ItemStack stack, String key) {
+    public static HashMap<String, ScrollEntry> entries = new HashMap<String, ScrollEntry>();
+
+    public static void addEntry(String key, ScrollEntry entry) {
+
+        entries.put(key, entry);
+
+    }
+
+    public static ScrollEntry getEntry(String key) {
+
+        return entries.get(key);
+
+    }
+
+    public static void setKeyOnStack(ItemStack stack, String key) {
 
         if(stack.stackTagCompound == null) {
 
@@ -27,7 +42,7 @@ public class ScrollUtil {
 
     }
 
-    public static String getKey(ItemStack stack) {
+    public static String getKeyFromStack(ItemStack stack) {
 
         if(stack.stackTagCompound != null) {
 
@@ -52,21 +67,21 @@ public class ScrollUtil {
 
         ItemStack scroll = new ItemStack(ModItems.itemScroll);
 
-        setKey(scroll, key);
+        setKeyOnStack(scroll, key);
 
         return scroll;
 
     }
 
-    public static ScrollEntry getEquippedScrollEntry(EntityPlayer player) {
+    public static ScrollEntry getEquippedScrollEntryFromPlayer(EntityPlayer player) {
 
         if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemScroll) {
 
-            return ScrollRegistry.getEntry(getKey(player.getCurrentEquippedItem()));
+            return getEntry(getKeyFromStack(player.getCurrentEquippedItem()));
 
         } else {
 
-            return ScrollRegistry.getEntry(ScrollLib.LEGACY_KEY);
+            return getEntry(ScrollLib.LEGACY_KEY);
 
         }
 

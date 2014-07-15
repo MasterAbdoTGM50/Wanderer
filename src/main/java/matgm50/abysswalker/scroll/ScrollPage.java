@@ -1,6 +1,6 @@
-package matgm50.abysswalker.api.scroll.page;
+package matgm50.abysswalker.scroll;
 
-import matgm50.abysswalker.api.scroll.util.ScrollSound;
+import matgm50.abysswalker.util.Sound;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 
@@ -10,12 +10,12 @@ import java.util.ArrayList;
  * Created by MasterAbdoTGM50 on 5/23/2014.
  */
 
-public class ScrollPageText extends ScrollPage {
+public class ScrollPage {
 
     private String text;
+    private Sound sound;
 
-    @Override
-    public void drawScreen(int startX, int startY) {
+    public void drawPage(int startX, int startY) {
 
         drawText(Minecraft.getMinecraft().fontRenderer, text, startX + 10, startY + 10);
 
@@ -81,6 +81,18 @@ public class ScrollPageText extends ScrollPage {
 
     }
 
+    public void playSound() {
+
+        Minecraft.getMinecraft().getSoundHandler().playSound(sound);
+
+    }
+
+    public void stopSound() {
+
+        Minecraft.getMinecraft().getSoundHandler().stopSound(sound);
+
+    }
+
     public void setText(String text) {
 
         this.text = text;
@@ -90,6 +102,18 @@ public class ScrollPageText extends ScrollPage {
     public String getText() {
 
         return this.text;
+
+    }
+
+    public void setSound(Sound sound) {
+
+        this.sound = sound;
+
+    }
+
+    public Sound getSound() {
+
+        return this.sound;
 
     }
 

@@ -1,4 +1,4 @@
-package matgm50.abysswalker.api.scroll.util;
+package matgm50.abysswalker.util;
 
 import net.minecraft.client.audio.ISound;
 import net.minecraft.util.ResourceLocation;
@@ -7,13 +7,14 @@ import net.minecraft.util.ResourceLocation;
  * Created by MasterAbdoTGM50 on 7/6/2014.
  */
 
-public class ScrollSound implements ISound {
+public class Sound implements ISound {
 
     private String soundEvent;
 
-    public ScrollSound(String soundEvent) {
+    public Sound(String soundEvent) {
 
         this.soundEvent = soundEvent;
+
     }
 
     @Override

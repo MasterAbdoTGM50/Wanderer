@@ -5,7 +5,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import matgm50.abysswalker.Abysswalker;
 import matgm50.abysswalker.lib.ItemLib;
 import matgm50.abysswalker.lib.ModLib;
-import matgm50.abysswalker.scroll.ScrollUtil;
+import matgm50.abysswalker.util.hooker.ScrollHooker;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
@@ -32,25 +32,17 @@ public class ItemScroll extends Item {
     }
 
     @Override
-    public boolean getShareTag() {
-
-        return true;
-
-    }
+    public boolean getShareTag() {return true;}
 
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
 
-        par3List.add(StatCollector.translateToLocal("scroll." + ScrollUtil.getKey(par1ItemStack) + ".name"));
+        par3List.add(StatCollector.translateToLocal("scroll." + ScrollHooker.getKeyFromStack(par1ItemStack) + ".name"));
 
     }
 
     @Override
-    public EnumRarity getRarity(ItemStack par1ItemStack) {
-
-        return EnumRarity.uncommon;
-
-    }
+    public EnumRarity getRarity(ItemStack par1ItemStack) {return EnumRarity.uncommon;}
 
     @Override
     public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {

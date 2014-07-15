@@ -1,12 +1,10 @@
 package matgm50.abysswalker.client.gui;
 
-import matgm50.abysswalker.api.scroll.util.ScrollSound;
 import matgm50.abysswalker.client.gui.button.ButtonNext;
-import matgm50.abysswalker.api.scroll.ScrollEntry;
+import matgm50.abysswalker.scroll.ScrollEntry;
 import matgm50.abysswalker.client.gui.button.ButtonSound;
 import matgm50.abysswalker.lib.ModLib;
-import matgm50.abysswalker.scroll.ScrollUtil;
-import net.minecraft.client.Minecraft;
+import matgm50.abysswalker.util.hooker.ScrollHooker;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.player.EntityPlayer;
@@ -30,7 +28,7 @@ public class GuiScroll extends GuiScreen {
 
     public GuiScroll(EntityPlayer player) {
 
-        this.entry = ScrollUtil.getEquippedScrollEntry(player);
+        this.entry = ScrollHooker.getEquippedScrollEntryFromPlayer(player);
 
     }
 
@@ -125,13 +123,13 @@ public class GuiScroll extends GuiScreen {
 
     public void playSound() {
 
-        Minecraft.getMinecraft().getSoundHandler().playSound(entry.getSound(currentlyOpenedPage));
+        (entry.getPage(currentlyOpenedPage)).playSound();
 
     }
 
     public void stopSound() {
 
-        Minecraft.getMinecraft().getSoundHandler().stopSound(entry.getSound(currentlyOpenedPage));
+        (entry.getPage(currentlyOpenedPage)).stopSound();
 
     }
 
@@ -145,7 +143,7 @@ public class GuiScroll extends GuiScreen {
 
         if((entry.getPage(currentlyOpenedPage)) != null) {
 
-            (entry.getPage(currentlyOpenedPage)).drawScreen(startX, startY);
+            (entry.getPage(currentlyOpenedPage)).drawPage(startX, startY);
 
         }
 

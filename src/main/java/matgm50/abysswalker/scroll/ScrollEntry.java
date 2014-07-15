@@ -1,8 +1,7 @@
-package matgm50.abysswalker.api.scroll;
+package matgm50.abysswalker.scroll;
 
-import matgm50.abysswalker.api.scroll.page.ScrollPage;
-import matgm50.abysswalker.api.scroll.page.ScrollPageText;
-import matgm50.abysswalker.api.scroll.util.ScrollSound;
+import matgm50.abysswalker.scroll.ScrollPage;
+import matgm50.abysswalker.util.Sound;
 import net.minecraft.util.StatCollector;
 
 import java.util.ArrayList;
@@ -15,7 +14,6 @@ public class ScrollEntry {
 
     private String key;
     private ArrayList<ScrollPage> pages = new ArrayList<ScrollPage>();
-    private ArrayList<ScrollSound> sounds = new ArrayList<ScrollSound>();
 
     public ScrollEntry(String key, ScrollPage... pages) {
 
@@ -40,12 +38,8 @@ public class ScrollEntry {
 
         for(int i = 0; i < pages.length; i++) {
 
-             if(pages[i] instanceof ScrollPageText) {
-
-                ((ScrollPageText)pages[i]).setText(StatCollector.translateToLocal("scroll." + key + ".text." + i));
-                 this.sounds.add(new ScrollSound("scroll." + key + ".sound." + i));
-
-             }
+            (pages[i]).setText(StatCollector.translateToLocal("scroll." + key + ".text." + i));
+            (pages[i]).setSound(new Sound(StatCollector.translateToLocal("scroll." + key + ".sound." + i)));
 
             this.pages.add(pages[i]);
 
@@ -62,12 +56,6 @@ public class ScrollEntry {
     public ScrollPage getPage(int pageIndex) {
 
         return this.pages.get(pageIndex);
-
-    }
-
-    public ScrollSound getSound(int pageIndex) {
-
-        return this.sounds.get(pageIndex);
 
     }
 
