@@ -7,7 +7,6 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import matgm50.abysswalker.api.scroll.ScrollRegistry;
 import matgm50.abysswalker.blocks.ModBlocks;
 import matgm50.abysswalker.item.ModItems;
 import matgm50.abysswalker.scroll.ScrollEntries;

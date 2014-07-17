@@ -1,4 +1,4 @@
-package matgm50.abysswalker.util.hooker;
+package matgm50.abysswalker.util.helper;
 
 import matgm50.abysswalker.scroll.ScrollEntry;
 import matgm50.abysswalker.item.ItemScroll;
@@ -14,7 +14,7 @@ import java.util.HashMap;
  * Created by MasterAbdoTGM50 on 7/15/2014.
  */
 
-public class ScrollHooker {
+public class ScrollHelper {
 
     public static HashMap<String, ScrollEntry> entries = new HashMap<String, ScrollEntry>();
 

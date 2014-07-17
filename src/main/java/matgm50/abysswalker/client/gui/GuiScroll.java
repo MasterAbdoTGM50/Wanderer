@@ -4,7 +4,7 @@ import matgm50.abysswalker.client.gui.button.ButtonNext;
 import matgm50.abysswalker.scroll.ScrollEntry;
 import matgm50.abysswalker.client.gui.button.ButtonSound;
 import matgm50.abysswalker.lib.ModLib;
-import matgm50.abysswalker.util.hooker.ScrollHooker;
+import matgm50.abysswalker.util.helper.ScrollHelper;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.player.EntityPlayer;
@@ -28,7 +28,7 @@ public class GuiScroll extends GuiScreen {
 
     public GuiScroll(EntityPlayer player) {
 
-        this.entry = ScrollHooker.getEquippedScrollEntryFromPlayer(player);
+        this.entry = ScrollHelper.getEquippedScrollEntryFromPlayer(player);
 
     }
 

@@ -5,7 +5,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import matgm50.abysswalker.Abysswalker;
 import matgm50.abysswalker.lib.ItemLib;
 import matgm50.abysswalker.lib.ModLib;
-import matgm50.abysswalker.util.hooker.ScrollHooker;
+import matgm50.abysswalker.util.helper.ScrollHelper;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
@@ -37,7 +37,7 @@ public class ItemScroll extends Item {
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
 
-        par3List.add(StatCollector.translateToLocal("scroll." + ScrollHooker.getKeyFromStack(par1ItemStack) + ".name"));
+        par3List.add(StatCollector.translateToLocal("scroll." + ScrollHelper.getKeyFromStack(par1ItemStack) + ".name"));
 
     }
 
