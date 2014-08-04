@@ -22,8 +22,8 @@ group= "matgm50.abysswalker" // http://maven.apache.org/guides/mini/guide-naming
 archivesBaseName = "Abysswalker"
 
 minecraft {
-    version = "1.7.10-10.13.0.1180"
-    runDir = "run/"
+    version = "1.7.10-10.13.0.1197"
+    runDir = "run"
 }
 
 processResources

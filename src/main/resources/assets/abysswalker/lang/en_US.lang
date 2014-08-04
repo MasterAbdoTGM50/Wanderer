@@ -1,10 +1,12 @@
 #Misc
-itemGroup.Abysswalker=Abysswalker
+itemGroup.Wanderer=Wanderer
 
 #Items
-item.itemScroll.name=Archive Scroll
+item.itemScroll.name=Memory Scroll
+item.itemBrush.name=Teku's Brush
 
 #Blocks
+tile.blockSigil.name=Sigil
 
 #Scrolls
 scroll.LEGACY.name=My Legacy

@@ -1,7 +1,7 @@
 [
 {
-  "modid": "Abysswalker",
-  "name": "Abysswalker",
+  "modid": "Wanderer",
+  "name": "Wanderer",
   "description": "A adventure mod with sprinkles of magic",
   "version": "${version}",
   "mcversion": "${mcversion}",

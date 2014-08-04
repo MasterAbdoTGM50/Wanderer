@@ -6,11 +6,13 @@
 /.gradle
 /build
 
-## Intellij
-/out
-/*.iml
-/*.ipr
-/*.iws
+## eclipse
+/eclipse
+/.settings
+/.metadata
+/.classpath
+/.project
+/bin
 
 ## Misc
 /run
