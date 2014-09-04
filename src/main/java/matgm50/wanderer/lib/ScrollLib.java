@@ -6,6 +6,6 @@ package matgm50.wanderer.lib;
 
 public class ScrollLib {
 
-    public static final String LEGACY_KEY = "LEGACY";
+    public static final String LOST_KEY = "LOST";
 
 }

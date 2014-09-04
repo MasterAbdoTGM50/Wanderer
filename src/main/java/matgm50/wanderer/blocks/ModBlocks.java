@@ -10,11 +10,7 @@ import net.minecraft.block.Block;
 
 public class ModBlocks {
 
-    public static Block blockSigil = new BlockSigil();
-
     public static void init() {
-
-        GameRegistry.registerBlock(blockSigil, BlockLib.SIGIL_NAME);
 
     }
 

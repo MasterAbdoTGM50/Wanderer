@@ -6,6 +6,4 @@ package matgm50.wanderer.lib;
 
 public class BlockLib {
 
-    public static String SIGIL_NAME = "blockSigil";
-
 }

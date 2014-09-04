@@ -9,11 +9,11 @@ import matgm50.wanderer.util.helper.ScrollHelper;
 
 public class ScrollEntries {
 
-    public static ScrollEntry LEGACY = new ScrollEntry(ScrollLib.LEGACY_KEY, new ScrollPage(), new ScrollPage());
+    public static ScrollEntry LOST = new ScrollEntry(ScrollLib.LOST_KEY, new ScrollPage());
 
     public static void init() {
 
-        ScrollHelper.addEntry(ScrollLib.LEGACY_KEY, LEGACY);
+        ScrollHelper.addEntry(ScrollLib.LOST_KEY, LOST);
 
     }
 

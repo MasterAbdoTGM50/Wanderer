@@ -1,0 +1,12 @@
+#Misc
+itemGroup.Wanderer=Wanderer
+
+#Items
+item.itemScroll.name=Memory Scroll
+item.itemBrush.name=Teku's Brush
+
+#Blocks
+
+#Scrolls
+scroll.LOST.name=Memories Lost
+scroll.LOST.text.0=I feel my memories fading away...<br><br>Within these pages I leave you my story...<br><br>The guidance you need...<br>...YOUNG HERO

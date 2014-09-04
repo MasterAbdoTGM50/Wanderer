@@ -24,7 +24,6 @@ public class GuiScroll extends GuiScreen {
     private GuiButton buttonPrev, buttonNext;
     private ScrollEntry entry;
     private int currentlyOpenedPage = 0;
-    private boolean isPlayingSound = false;
 
     public GuiScroll(EntityPlayer player) {
 
@@ -51,7 +50,12 @@ public class GuiScroll extends GuiScreen {
 
     public void updateButtons() {
 
-        if(currentlyOpenedPage == 0) {
+        if(currentlyOpenedPage == 0 && entry.getPages().size() == 1) {
+
+            buttonNext.enabled = false;
+            buttonPrev.enabled = false;
+
+        } else if(currentlyOpenedPage == 0) {
 
             buttonNext.enabled = true;
             buttonPrev.enabled = false;

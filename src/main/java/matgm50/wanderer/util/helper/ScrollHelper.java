@@ -52,12 +52,12 @@ public class ScrollHelper {
 
             } else {
 
-                return ScrollLib.LEGACY_KEY;
+                return ScrollLib.LOST_KEY;
             }
 
         } else {
 
-            return ScrollLib.LEGACY_KEY;
+            return ScrollLib.LOST_KEY;
 
         }
 
@@ -81,7 +81,7 @@ public class ScrollHelper {
 
         } else {
 
-            return getEntry(ScrollLib.LEGACY_KEY);
+            return getEntry(ScrollLib.LOST_KEY);
 
         }
 
