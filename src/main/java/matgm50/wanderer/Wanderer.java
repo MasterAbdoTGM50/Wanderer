@@ -1,8 +1,6 @@
 package matgm50.wanderer;
 
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -24,7 +22,7 @@ import net.minecraft.creativetab.CreativeTabs;
 
 public class Wanderer {
 
-    @Instance(ModLib.ID)
+    @Mod.Instance(ModLib.ID)
     public static Wanderer instance;
 
     @SidedProxy(serverSide = ModLib.COMMONPROXY, clientSide = ModLib.CLIENTPROXY)
@@ -32,7 +30,7 @@ public class Wanderer {
 
     public static CreativeTabs tabWanderer = new TabWanderer(ModLib.ID);
 
-    @EventHandler
+    @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
         GuiHandler.init();
@@ -44,12 +42,12 @@ public class Wanderer {
 
     }
 
-    @EventHandler
+    @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
 
     }
 
-    @EventHandler
+    @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
 
     }
