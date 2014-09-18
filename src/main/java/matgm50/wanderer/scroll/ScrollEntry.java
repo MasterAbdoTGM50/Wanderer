@@ -13,6 +13,13 @@ public class ScrollEntry {
     private String key;
     private ArrayList<ScrollPage> pages = new ArrayList<ScrollPage>();
 
+    public ScrollEntry(String key, int pageCount) {
+
+        setKey(key);
+        setPagesByCount(pageCount);
+
+    }
+
     public ScrollEntry(String key, ScrollPage... pages) {
 
         setKey(key);
@@ -39,6 +46,20 @@ public class ScrollEntry {
             (pages[i]).setText(StatCollector.translateToLocal("scroll." + key + ".text." + i));
 
             this.pages.add(pages[i]);
+
+        }
+
+    }
+
+    public void setPagesByCount(int pageCount) {
+
+        for(int i = 0; i < pageCount; i++) {
+
+            ScrollPage page = new ScrollPage();
+
+            page.setText(StatCollector.translateToLocal("scroll." + key + ".text." + i));
+
+            this.pages.add(page);
 
         }
 

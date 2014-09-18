@@ -7,6 +7,7 @@ package matgm50.wanderer.lib;
 public class ItemLib {
 
     public static final String SCROLL_NAME = "itemScroll";
+    public static final String SHEARS_NAME = "itemStoneShears";
     public static final String BRUSH_NAME = "itemBrush";
     public static final String BOWBLADE_NAME = "itemBowblade";
 

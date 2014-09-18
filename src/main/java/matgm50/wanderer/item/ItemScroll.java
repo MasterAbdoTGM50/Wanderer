@@ -61,7 +61,7 @@ public class ItemScroll extends Item {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister register) {
 
-        itemIcon = register.registerIcon(ModLib.ID.toLowerCase() + ":" + "scroll");
+        itemIcon = register.registerIcon(ModLib.ID.toLowerCase() + ":scroll");
 
     }
 

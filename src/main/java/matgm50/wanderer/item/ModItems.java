@@ -11,14 +11,12 @@ import net.minecraft.item.Item;
 public class ModItems {
 
     public static Item itemScroll = new ItemScroll();
-    public static Item itemBrush = new ItemBrush();
-    public static Item itemBowblade = new ItemBowblade();
+    public static Item itemStoneShears = new ItemStoneShears();
 
     public static void init() {
 
         GameRegistry.registerItem(itemScroll, ItemLib.SCROLL_NAME);
-        GameRegistry.registerItem(itemBrush, ItemLib.BRUSH_NAME);
-        GameRegistry.registerItem(itemBowblade, ItemLib.BOWBLADE_NAME);
+        GameRegistry.registerItem(itemStoneShears, ItemLib.SHEARS_NAME);
 
     }
 

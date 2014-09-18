@@ -20,7 +20,7 @@ public class GuiScroll extends GuiScreen {
     private final int guiWidth = 132;
     private final int guiHeight = 168;
     private int startX, startY;
-    private static final ResourceLocation texture = new ResourceLocation(ModLib.ID.toLowerCase(), "textures/gui/scroll.png");
+    private static final ResourceLocation texture = new ResourceLocation(ModLib.ID.toLowerCase(), "textures/guis/scroll.png");
     private GuiButton buttonPrev, buttonNext;
     private ScrollEntry entry;
     private int currentlyOpenedPage = 0;

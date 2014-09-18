@@ -3,10 +3,18 @@ itemGroup.Wanderer=Wanderer
 
 #Items
 item.itemScroll.name=Memory Scroll
-item.itemBrush.name=Teku's Brush
+item.itemStoneShears.name=Stone Shears
 
 #Blocks
+
+#Tooltips
 
 #Scrolls
 scroll.LOST.name=Memories Lost
 scroll.LOST.text.0=I feel my memories fading away...<br><br>Within these pages I leave you my story...<br><br>The guidance you need...<br>...YOUNG HERO
+
+scroll.ORIGIN1.name=Origin Pt.1
+scroll.ORIGIN1.text.0=Imagine being born without a name. Without a place to call home. Being thrown from a house to another looking for someone to take care of you or even give you a murmer of help.<br>My childhood wasn't a pleasant one and I don't wish it even on an enemy.<br>In my youth I began working in the streets taking any name that suits the situation.
+scroll.ORIGIN1.text.1=Every day had a different way to make me suffer.<br>But one day me and all the people in the district were captured.<br>We got imprisoned for the charge of plaguing the Kingdom and being homeless bums who upset the rich.
+scroll.ORIGIN1.text.2=A weird reality we live in child.<br>You are born homeless with noone to take care of you and everything taken from you only to grow up to be called a criminal by those who refused you.
+
