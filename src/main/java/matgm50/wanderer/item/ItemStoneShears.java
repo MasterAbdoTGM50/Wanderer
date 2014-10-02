@@ -24,7 +24,8 @@ public class ItemStoneShears extends ItemShears {
     @Override
     public void registerIcons(IIconRegister register) {
 
-        itemIcon = register.registerIcon(ModLib.ID.toLowerCase() + ":shears");
+        itemIcon = register.registerIcon(ModLib.ID.toLowerCase() + ":stoneShears");
 
     }
+
 }

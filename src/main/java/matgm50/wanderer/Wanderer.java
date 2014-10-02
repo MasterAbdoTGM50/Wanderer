@@ -8,12 +8,13 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import matgm50.wanderer.blocks.ModBlocks;
 import matgm50.wanderer.client.gui.GuiHandler;
-import matgm50.wanderer.crafting.ModRecipse;
+import matgm50.wanderer.crafting.ModRecipes;
 import matgm50.wanderer.item.ModItems;
 import matgm50.wanderer.lib.ModLib;
 import matgm50.wanderer.proxy.CommonProxy;
 import matgm50.wanderer.scroll.ScrollEntries;
 import matgm50.wanderer.util.CommandWanderer;
+import matgm50.wanderer.util.ModEvents;
 import matgm50.wanderer.util.TabWanderer;
 import net.minecraft.creativetab.CreativeTabs;
 
@@ -41,7 +42,9 @@ public class Wanderer {
         ModItems.init();
         ModBlocks.init();
 
-        ModRecipse.init();
+        ModRecipes.init();
+
+        ModEvents.init();
 
         ScrollEntries.init();
 
