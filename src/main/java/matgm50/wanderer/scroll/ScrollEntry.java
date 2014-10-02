@@ -13,10 +13,10 @@ public class ScrollEntry {
     private String key;
     private ArrayList<ScrollPage> pages = new ArrayList<ScrollPage>();
 
-    public ScrollEntry(String key, int pageCount) {
+    public ScrollEntry(String key) {
 
         setKey(key);
-        setPagesByCount(pageCount);
+        setPagesByCount(Integer.parseInt(StatCollector.translateToLocal("scroll." + key + ".pageCount")));
 
     }
 
@@ -62,6 +62,14 @@ public class ScrollEntry {
             this.pages.add(page);
 
         }
+
+    }
+
+    public ScrollEntry overridePage(int index, ScrollPage page) {
+
+        pages.set(index, page);
+
+        return this;
 
     }
 

@@ -9,13 +9,15 @@ import matgm50.wanderer.util.helper.ScrollHelper;
 
 public class ScrollEntries {
 
-    public static ScrollEntry LOST = new ScrollEntry(ScrollLib.LOST_KEY, 1);
-    public static ScrollEntry ORIGIN1 = new ScrollEntry(ScrollLib.ORIGIN1_KEY, 3);
+    public static ScrollEntry LOST = new ScrollEntry(ScrollLib.LOST_KEY);
+    public static ScrollEntry ORIGIN1 = new ScrollEntry(ScrollLib.ORIGIN1_KEY);
+    public static ScrollEntry ORIGIN2 = new ScrollEntry(ScrollLib.ORIGIN2_KEY);
 
     public static void init() {
 
         ScrollHelper.addEntry(ScrollLib.LOST_KEY, LOST);
         ScrollHelper.addEntry(ScrollLib.ORIGIN1_KEY, ORIGIN1);
+        ScrollHelper.addEntry(ScrollLib.ORIGIN2_KEY, ORIGIN2);
 
     }
 
