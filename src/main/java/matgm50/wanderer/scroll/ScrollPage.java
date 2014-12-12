@@ -15,7 +15,7 @@ public class ScrollPage {
 
     public void drawPage(int startX, int startY) {
 
-        drawText(Minecraft.getMinecraft().fontRenderer, text, startX + 14, startY + 14);
+        drawText(Minecraft.getMinecraft().fontRenderer, text, startX + 10, startY + 10);
 
     }
 

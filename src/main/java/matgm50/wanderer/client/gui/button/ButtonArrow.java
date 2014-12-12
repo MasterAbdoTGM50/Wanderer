@@ -43,10 +43,10 @@ public class ButtonArrow extends GuiButton {
 
             }
 
-            par1Minecraft.renderEngine.bindTexture(new ResourceLocation(ModLib.ID.toLowerCase(), "textures/guis/book.png"));
+            par1Minecraft.renderEngine.bindTexture(new ResourceLocation(ModLib.ID.toLowerCase(), "textures/guis/scroll.png"));
 
             GL11.glColor4f(1F, 1F, 1F, 1F);
-            drawTexturedModalRect(xPosition, yPosition, xIncrease, 180 + yIncrease, 18, 10);
+            drawTexturedModalRect(xPosition, yPosition, xIncrease, 168 + yIncrease, 18, 10);
 
         }
 
