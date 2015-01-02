@@ -1,12 +1,11 @@
 package matgm50.wanderer;
 
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLServerStartingEvent;
-import matgm50.wanderer.blocks.ModBlocks;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import matgm50.wanderer.client.gui.GuiHandler;
 import matgm50.wanderer.crafting.ModRecipes;
 import matgm50.wanderer.item.ModItems;
@@ -17,10 +16,6 @@ import matgm50.wanderer.util.CommandWanderer;
 import matgm50.wanderer.util.ModEvents;
 import matgm50.wanderer.util.TabWanderer;
 import net.minecraft.creativetab.CreativeTabs;
-
-/**
- * Created by MasterAbdoTGM50 on 4/23/2014.
- */
 
 @Mod(modid = ModLib.ID, name = ModLib.NAME, version = ModLib.VERSION)
 
@@ -40,7 +35,6 @@ public class Wanderer {
         GuiHandler.init();
 
         ModItems.init();
-        ModBlocks.init();
 
         ModRecipes.init();
 
@@ -52,6 +46,8 @@ public class Wanderer {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+
+        proxy.initItemModels();
 
     }
 

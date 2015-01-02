@@ -5,17 +5,13 @@ import net.minecraft.client.gui.FontRenderer;
 
 import java.util.ArrayList;
 
-/**
- * Created by MasterAbdoTGM50 on 5/23/2014.
- */
-
 public class ScrollPage {
 
     private String text;
 
     public void drawPage(int startX, int startY) {
 
-        drawText(Minecraft.getMinecraft().fontRenderer, text, startX + 10, startY + 10);
+        drawText(Minecraft.getMinecraft().fontRendererObj, text, startX + 10, startY + 10);
 
     }
 

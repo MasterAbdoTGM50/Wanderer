@@ -1,12 +1,8 @@
 package matgm50.wanderer.item;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import matgm50.wanderer.Wanderer;
 import matgm50.wanderer.lib.ItemLib;
-import matgm50.wanderer.lib.ModLib;
 import matgm50.wanderer.util.helper.ScrollHelper;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
@@ -15,10 +11,6 @@ import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
 import java.util.List;
-
-/**
- * Created by MasterAbdoTGM50 on 4/23/2014.
- */
 
 public class ItemScroll extends Item {
 
@@ -42,7 +34,7 @@ public class ItemScroll extends Item {
     }
 
     @Override
-    public EnumRarity getRarity(ItemStack par1ItemStack) {return EnumRarity.uncommon;}
+    public EnumRarity getRarity(ItemStack par1ItemStack) {return EnumRarity.UNCOMMON;}
 
     @Override
     public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
@@ -54,14 +46,6 @@ public class ItemScroll extends Item {
         }
 
         return par1ItemStack;
-
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister register) {
-
-        itemIcon = register.registerIcon(ModLib.ID.toLowerCase() + ":scroll");
 
     }
 

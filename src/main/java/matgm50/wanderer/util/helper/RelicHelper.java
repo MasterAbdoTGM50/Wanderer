@@ -4,19 +4,15 @@ import matgm50.wanderer.lib.ScrollLib;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
-/**
- * Created by MasterAbdoTGM50 on 9/13/2014.
- */
-
 public class RelicHelper {
 
     public static String getUpgrade(ItemStack stack) {
 
-        if(stack.stackTagCompound != null) {
+        if(stack.getTagCompound() != null) {
 
-            if(stack.stackTagCompound.hasKey("upgrade")) {
+            if(stack.getTagCompound().hasKey("upgrade")) {
 
-                return stack.stackTagCompound.getString("upgrade");
+                return stack.getTagCompound().getString("upgrade");
 
             } else {
 
@@ -34,13 +30,13 @@ public class RelicHelper {
 
     public static void setUpgrade(ItemStack stack, String key) {
 
-        if(stack.stackTagCompound == null) {
+        if(stack.getTagCompound() == null) {
 
             stack.setTagCompound(new NBTTagCompound());
 
         }
 
-        stack.stackTagCompound.setString("upgrade", key);
+        stack.getTagCompound().setString("upgrade", key);
 
     }
 

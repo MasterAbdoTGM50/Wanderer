@@ -4,10 +4,6 @@ import net.minecraft.util.StatCollector;
 
 import java.util.ArrayList;
 
-/**
- * Created by MasterAbdoTGM50 on 5/19/2014.
- */
-
 public class ScrollEntry {
 
     private String key;

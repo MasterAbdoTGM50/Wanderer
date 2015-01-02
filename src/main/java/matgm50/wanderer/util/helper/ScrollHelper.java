@@ -10,10 +10,6 @@ import net.minecraft.nbt.NBTTagCompound;
 
 import java.util.HashMap;
 
-/**
- * Created by MasterAbdoTGM50 on 7/15/2014.
- */
-
 public class ScrollHelper {
 
     public static HashMap<String, ScrollEntry> entries = new HashMap<String, ScrollEntry>();
@@ -32,23 +28,23 @@ public class ScrollHelper {
 
     public static void setKeyOnStack(ItemStack stack, String key) {
 
-        if(stack.stackTagCompound == null) {
+        if(stack.getTagCompound() == null) {
 
             stack.setTagCompound(new NBTTagCompound());
 
         }
 
-        stack.stackTagCompound.setString("key", key);
+        stack.getTagCompound().setString("key", key);
 
     }
 
     public static String getKeyFromStack(ItemStack stack) {
 
-        if(stack.stackTagCompound != null) {
+        if(stack.getTagCompound() != null) {
 
-            if(stack.stackTagCompound.hasKey("key")) {
+            if(stack.getTagCompound().hasKey("key")) {
 
-                return stack.stackTagCompound.getString("key");
+                return stack.getTagCompound().getString("key");
 
             } else {
 

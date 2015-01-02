@@ -5,10 +5,6 @@ import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 
-/**
- * Created by MasterAbdoTGM50 on 9/18/2014.
- */
-
 public class CommandWanderer extends CommandBase {
 
     @Override

@@ -1,6 +1,7 @@
 package matgm50.wanderer.item.relic;
 
 import matgm50.wanderer.Wanderer;
+import matgm50.wanderer.lib.ModLib;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
@@ -9,13 +10,9 @@ import net.minecraft.util.DamageSource;
 import net.minecraftforge.common.ISpecialArmor;
 import net.minecraftforge.common.util.EnumHelper;
 
-/**
- * Created by MasterAbdoTGM50 on 10/2/2014.
- */
-
 public class ItemNamelessArmor extends ItemArmor implements ISpecialArmor {
 
-    public static ArmorMaterial materialNameless = EnumHelper.addArmorMaterial("NAMELESS", 0, new int[]{2, 6, 5, 2}, 0);
+    public static ArmorMaterial materialNameless = EnumHelper.addArmorMaterial("NAMELESS", ModLib.ID.toLowerCase() + ":textures/models/armor/nameless", 0, new int[]{2, 6, 5, 2}, 0);
 
     public ItemNamelessArmor(int type) {
 

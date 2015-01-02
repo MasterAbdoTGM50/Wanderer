@@ -1,14 +1,10 @@
 package matgm50.wanderer.client.gui;
 
-import cpw.mods.fml.common.network.IGuiHandler;
-import cpw.mods.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.IGuiHandler;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import matgm50.wanderer.Wanderer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-
-/**
- * Created by MasterAbdoTGM50 on 4/28/2014.
- */
 
 public class GuiHandler implements IGuiHandler {
 

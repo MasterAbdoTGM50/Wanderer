@@ -1,5 +1,6 @@
 package matgm50.wanderer.client.gui.button;
 
+import matgm50.wanderer.lib.GuiLib;
 import matgm50.wanderer.lib.ModLib;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
@@ -7,17 +8,13 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-/**
- * Created by MasterAbdoTGM50 on 5/23/2014.
- */
-
 public class ButtonArrow extends GuiButton {
 
     private boolean isNext;
 
     public ButtonArrow(int par1, int par2, int par3, boolean par4) {
 
-        super(par1, par2, par3, 18, 10, "");
+        super(par1, par2, par3, GuiLib.SCROLL_ARROW_WIDTH, GuiLib.SCROLL_ARROW_HEIGHT, "");
         isNext = par4;
 
     }
@@ -33,20 +30,20 @@ public class ButtonArrow extends GuiButton {
 
             if(isNext) {
 
-                xIncrease = 18;
+                xIncrease = GuiLib.SCROLL_ARROW_WIDTH;
 
             }
 
             if(getHoverState(isHovering) == 2) {
 
-                yIncrease = 10;
+                yIncrease = GuiLib.SCROLL_ARROW_HEIGHT;
 
             }
 
-            par1Minecraft.renderEngine.bindTexture(new ResourceLocation(ModLib.ID.toLowerCase(), "textures/guis/scroll.png"));
+            par1Minecraft.renderEngine.bindTexture(GuiLib.SCROLL_TEXTURE);
 
             GL11.glColor4f(1F, 1F, 1F, 1F);
-            drawTexturedModalRect(xPosition, yPosition, xIncrease, 168 + yIncrease, 18, 10);
+            drawTexturedModalRect(xPosition, yPosition, xIncrease, GuiLib.SCROLL_TEXTURE_HEIGHT + yIncrease, GuiLib.SCROLL_ARROW_WIDTH, GuiLib.SCROLL_ARROW_HEIGHT);
 
         }
 

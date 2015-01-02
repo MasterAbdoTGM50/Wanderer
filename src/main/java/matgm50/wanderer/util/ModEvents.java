@@ -1,6 +1,6 @@
 package matgm50.wanderer.util;
 
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import matgm50.wanderer.item.relic.ItemNamelessBlade;
 import matgm50.wanderer.item.ItemScroll;
 import matgm50.wanderer.item.ModItems;
@@ -10,10 +10,6 @@ import matgm50.wanderer.util.helper.ScrollHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AnvilUpdateEvent;
-
-/**
- * Created by MasterAbdoTGM50 on 9/26/2014.
- */
 
 public class ModEvents {
 
