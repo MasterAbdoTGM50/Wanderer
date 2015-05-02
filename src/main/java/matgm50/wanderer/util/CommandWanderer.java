@@ -2,13 +2,14 @@ package matgm50.wanderer.util;
 
 import matgm50.wanderer.util.helper.ScrollHelper;
 import net.minecraft.command.CommandBase;
+import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 
 public class CommandWanderer extends CommandBase {
 
     @Override
-    public String getCommandName() {return "wanderer";}
+    public String getName() {return "wanderer";}
 
     @Override
     public String getCommandUsage(ICommandSender sender) {
@@ -16,7 +17,7 @@ public class CommandWanderer extends CommandBase {
     }
 
     @Override
-    public void processCommand(ICommandSender sender, String[] args) {
+    public void execute(ICommandSender sender, String[] args) throws CommandException {
 
         if(args.length < 1) {return;}
         if(!(sender instanceof EntityPlayer)) {return;}

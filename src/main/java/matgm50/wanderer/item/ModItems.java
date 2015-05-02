@@ -11,10 +11,8 @@ public class ModItems {
     public static Item itemStoneShears = new ItemStoneShears();
     public static Item itemGrassSoup = new ItemGrassSoup();
     public static Item itemNamelessBlade = new ItemNamelessBlade();
-    public static Item itemNamelessHelm = new ItemNamelessHelmet();
     public static Item itemNamelessChestplate = new ItemNamelessChestplate();
-    public static Item itemNamelessLeggings = new ItemNamelessLeggings();
-    public static Item itemNamelessBoots = new ItemNamelessBoots();
+    public static Item itemThriftyTear = new ItemThriftyTear();
 
     public static void init() {
 
@@ -22,10 +20,8 @@ public class ModItems {
         GameRegistry.registerItem(itemStoneShears, ItemLib.SHEARS_NAME);
         GameRegistry.registerItem(itemGrassSoup, ItemLib.SOUP_NAME);
         GameRegistry.registerItem(itemNamelessBlade, ItemLib.NAMELESS_BLADE_NAME);
-        GameRegistry.registerItem(itemNamelessHelm, ItemLib.NAMELESS_HELMET_NAME);
         GameRegistry.registerItem(itemNamelessChestplate, ItemLib.NAMELESS_CHESTPLATE_NAME);
-        GameRegistry.registerItem(itemNamelessLeggings, ItemLib.NAMELESS_LEGGINGSS_NAME);
-        GameRegistry.registerItem(itemNamelessBoots, ItemLib.NAMELESS_BOOTS_NAME);
+        GameRegistry.registerItem(itemThriftyTear, ItemLib.THRIFTY_TEAR_NAME);
 
     }
 

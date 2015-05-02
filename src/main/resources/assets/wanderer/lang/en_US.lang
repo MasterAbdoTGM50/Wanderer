@@ -6,10 +6,8 @@ item.itemScroll.name=Memory Scroll
 item.itemStoneShears.name=Stone Shears
 item.itemGrassSoup.name=Grass Soup
 item.itemNamelessBlade.name=Blade of the Nameless
-item.itemNamelessHelmet.name=Mask of the Nameless
 item.itemNamelessChestplate.name=Chestplate of the Nameless
-item.itemNamelessLeggings.name=Leggings of the Nameless
-item.itemNamelessBoots.name=Boots of the Nameless
+item.itemThriftyTear.name=Thrifty's Tear
 
 #Blocks
 

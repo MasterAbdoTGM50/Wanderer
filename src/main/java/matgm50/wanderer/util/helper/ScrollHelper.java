@@ -14,6 +14,12 @@ public class ScrollHelper {
 
     public static HashMap<String, ScrollEntry> entries = new HashMap<String, ScrollEntry>();
 
+    public static void addEntry(ScrollEntry entry) {
+
+        entries.put(entry.getKey(), entry);
+
+    }
+
     public static void addEntry(String key, ScrollEntry entry) {
 
         entries.put(key, entry);

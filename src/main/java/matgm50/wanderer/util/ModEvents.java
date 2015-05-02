@@ -1,10 +1,10 @@
 package matgm50.wanderer.util;
 
+import matgm50.wanderer.item.relic.ItemNamelessChestplate;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import matgm50.wanderer.item.relic.ItemNamelessBlade;
 import matgm50.wanderer.item.ItemScroll;
 import matgm50.wanderer.item.ModItems;
-import matgm50.wanderer.lib.ScrollLib;
 import matgm50.wanderer.util.helper.RelicHelper;
 import matgm50.wanderer.util.helper.ScrollHelper;
 import net.minecraft.item.ItemStack;
@@ -26,25 +26,25 @@ public class ModEvents {
 
             if(event.right.getItem() instanceof ItemScroll) {
 
-                if(ScrollHelper.getKeyFromStack(event.right).equals(ScrollLib.LOST_KEY)) {
+                ItemStack blade = new ItemStack(ModItems.itemNamelessBlade);
+                RelicHelper.setUpgrade(blade, ScrollHelper.getKeyFromStack(event.right));
 
-                    ItemStack blade = new ItemStack(ModItems.itemNamelessBlade);
-                    RelicHelper.setUpgrade(blade, ScrollLib.LOST_KEY);
+                event.cost = 10;
+                event.output = blade;
 
-                    event.cost = 10;
-                    event.output = blade;
+            }
 
-                }
+        }
 
-                if(ScrollHelper.getKeyFromStack(event.right).equals(ScrollLib.ORIGIN2_KEY)) {
+        if(event.left.getItem() instanceof ItemNamelessChestplate) {
 
-                    ItemStack blade = new ItemStack(ModItems.itemNamelessBlade);
-                    RelicHelper.setUpgrade(blade, ScrollLib.ORIGIN2_KEY);
+            if(event.right.getItem() instanceof ItemScroll) {
 
-                    event.cost = 10;
-                    event.output = blade;
+                ItemStack chestplate = new ItemStack(ModItems.itemNamelessChestplate);
+                RelicHelper.setUpgrade(chestplate, ScrollHelper.getKeyFromStack(event.right));
 
-                }
+                event.cost = 10;
+                event.output = chestplate;
 
             }
 

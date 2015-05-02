@@ -11,9 +11,9 @@ public class ScrollEntries {
 
     public static void init() {
 
-        ScrollHelper.addEntry(ScrollLib.LOST_KEY, LOST);
-        ScrollHelper.addEntry(ScrollLib.ORIGIN1_KEY, ORIGIN1);
-        ScrollHelper.addEntry(ScrollLib.ORIGIN2_KEY, ORIGIN2);
+        ScrollHelper.addEntry(LOST);
+        ScrollHelper.addEntry(ORIGIN1);
+        ScrollHelper.addEntry(ORIGIN2);
 
     }
 

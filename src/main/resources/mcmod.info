@@ -1,16 +1,14 @@
-[
-{
+[{
   "modid": "Wanderer",
   "name": "Wanderer",
-  "description": "A adventure mod with sprinkles of magic",
+  "description": "An adventure mod with sprinkles of magic",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
   "authors": ["MasterAbdoTGM50"],
-  "credits": "TechMac, Thaumatarge",
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
-}
-]
+}]

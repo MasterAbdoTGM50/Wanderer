@@ -31,8 +31,9 @@ archivesBaseName = "Wanderer"
 
 minecraft {
 
-    version = "1.8-11.14.0.1281-1.8"
+    version = "1.8-11.14.1.1397"
     runDir = "run"
+	mappings = "snapshot_20141130"
 	
 }
 

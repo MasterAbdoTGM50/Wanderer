@@ -12,7 +12,7 @@ import net.minecraft.util.DamageSource;
 
 import java.util.List;
 
-public class ItemNamelessBlade extends Item {
+public class ItemNamelessBlade extends Item implements INamelessRelic{
 
     public ItemNamelessBlade() {
 
